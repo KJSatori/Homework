@@ -1,6 +1,4 @@
 #pragma once
-void PrintResults(int* weatherPointer, bool* resultPointer, int count);
-
 bool OneStageDecision(double probability);
 
 /// <summary>

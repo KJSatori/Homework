@@ -5,47 +5,6 @@
 
 using namespace std;
 
-void PrintResults(int* weatherPointer, bool* resultPointer, int count)
-{
-	for (int index = 0; index != count; ++index)
-	{
-		cout << index + 1 << ".Weather:\t";
-		switch (weatherPointer[index])
-		{
-		case 1:
-			cout << "Sunny and Humid" << endl;
-			break;
-		case 2:
-			cout << "Sunny and not Humid" << endl;
-			break;
-		case 3:
-			cout << "Raining and Windy" << endl;
-			break;
-		case 4:
-			cout << "Raining and not Windy" << endl;
-			break;
-		case 5:
-			cout << "Overcast" << endl;
-			break;
-		}
-		if (index + 1 >= 10)
-		{
-			cout << " ";
-		}
-		cout << "  Decision:\t";
-		if (resultPointer[index] == 0)
-		{
-			cout << "Not Play" << endl;
-		}
-		else
-		{
-			cout << "Play" << endl;
-		}
-		cout << endl;
-	}
-	return;
-}
-
 bool OneStageDecision(double probability)
 {
 	return (rand() / (double)RAND_MAX) < probability;
