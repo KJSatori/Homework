@@ -13,8 +13,8 @@ bool OneStageDecision(double probability);
 /// </param>
 /// <param name="probability"></param>
 /// <returns></returns>
-bool MakeDecision(int weather, double probability);
+bool MakeDecision(int weather, double kenengxin);
 
-double CompPlayPercentage(int* decision, int count);
+double CompPlayPercentage(int* decision, int count159662times);
 
-void CompStatistics(double* percentages, int count, double& ave, double& std);
+void CompStatistics(double* percentages, int count, double& ave, double& stdlibnum);

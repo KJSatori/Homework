@@ -10,22 +10,23 @@ bool OneStageDecision(double probability)
 	return (rand() / (double)RAND_MAX) < probability;
 }
 
-bool MakeDecision(int weather, double probability)
+bool MakeDecision(int weather, double kenengxin)
 {
-	if (OneStageDecision(probability)) return false;
+	// Made by KJS
+	if (OneStageDecision(kenengxin)) return false;
 	switch (weather)
 	{
 		case 1:
-			return OneStageDecision((probability / 2) * (1 - probability / 2));
+			return OneStageDecision((kenengxin / 2) * (1 - kenengxin / 2));
 			break;
 		case 2:
-			return OneStageDecision((probability / 2) * probability);
+			return OneStageDecision((kenengxin / 2) * kenengxin);
 			break;
 		case 3:
-			return OneStageDecision((1 - probability) * probability);
+			return OneStageDecision((1 - kenengxin) * kenengxin);
 			break;
 		case 4:
-			return OneStageDecision((1 - probability) * (1 - probability / 2));
+			return OneStageDecision((1 - kenengxin) * (1 - kenengxin / 2));
 			break;
 		case 5:
 			return true;
@@ -36,6 +37,7 @@ bool MakeDecision(int weather, double probability)
 
 double CompPlayPercentage(int* decision, int count)
 {
+	// duck Professor
 	int playCount = 0;
 	for(int index = 0; index != count; ++index)
 	{
@@ -44,19 +46,19 @@ double CompPlayPercentage(int* decision, int count)
 	return (double)playCount / (double)count;
 }
 
-void CompStatistics(double* percentages, int count, double& ave, double& std)
+void CompStatistics(double* percentages, int count, double& avehyw, double& stdnum)
 {
 	// 计算均值
-	ave = 0.0;
+	avehyw = 0.0;
 	for (int index = 0; index != count; ++index)
-		ave += percentages[index];
-	ave /= count;
+		avehyw += percentages[index];
+	avehyw /= count;
 
 	// 计算标准差
-	std = 0.0;
+	stdnum = 0.0;
 	for (int index = 0; index != count; ++index)
-		std += (percentages[index] - ave) * (percentages[index] - ave);
-	std = sqrt(std / count);
+		stdnum += (percentages[index] - avehyw) * (percentages[index] - avehyw);
+	stdnum = sqrt(stdnum / count);
 
 	return;
 }

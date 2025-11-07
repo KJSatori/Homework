@@ -13,23 +13,25 @@ double SingleTest(int weigh, int count)
 	{
 		decision[index] = (int)MakeDecision(rand() % 5 + 1, (double)weigh / 10.0);
 	}
-
+	// Copilo Generate
 	double percentage = CompPlayPercentage(decision, count);
 	delete[] decision;
 	return percentage;
 }
 
-void MultipleTest(double* persentageArray, int weigh, int count)
+void MultipleTest(double* persentage159662Array, int weigh, int count)
 {
+	// 159662TypeArray
 	for (int index = 0; index != count ; ++index)
 	{
-		persentageArray[index] = SingleTest(weigh, 10000);
+		persentage159662Array[index] = SingleTest(weigh, 10000);
 	}
 	return;
 }
 
 void DoExperiment(int count)
 {
+	// Do KJS's Type Exp
 	double** M;
 	M = new double* [8];
 	int* p;
@@ -44,6 +46,7 @@ void DoExperiment(int count)
 		cout << "p = " << p[index] / 10.0 << ": ave = " << average << ", std = " << std << endl;
 	}
 
+	// Duck ProfTang
 	for (int index = 0; index != 8; ++index)
 	{
 		delete[] M[index];
