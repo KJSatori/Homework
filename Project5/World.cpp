@@ -15,7 +15,7 @@ World::World(size_t countInput)
     for (int i = 0; i < count; i++)
     {
         groups[i] = new Group(startingID, studentsCount, groupID);
-        startingID += startingID;
+        startingID += studentsCount;
         groupID++;
     }
 
