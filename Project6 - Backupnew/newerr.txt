@@ -1,0 +1,1261 @@
+kjsatori@KJSatori:~/Homework/Project6$ cat err
+==676== Memcheck, a memory error detector
+==676== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==676== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==676== Command: ./proj6
+==676==
+==676==
+==676== HEAP SUMMARY:
+==676==     in use at exit: 0 bytes in 0 blocks
+==676==   total heap usage: 1,909 allocs, 1,909 frees, 120,588 bytes allocated
+==676==
+==676== All heap blocks were freed -- no leaks are possible
+==676==
+==676== For lists of detected and suppressed errors, rerun with: -s
+==676== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+kjsatori@KJSatori:~/Homework/Project6$ valgrind --leak-check=full ./proj6 2>err
+-------------- Day: 1 | Weather: Raining and not Windy ---------------
+Group 0: 30 students, 10 play, 20 not play
+        ID to play: 1 2 5 6 7 14 18 23 25 27
+Group 1: 30 students, 10 play, 20 not play
+        ID to play: 30 40 43 46 48 49 51 53 57 58
+Group 2: 30 students, 10 play, 20 not play
+        ID to play: 60 62 63 69 70 72 73 80 83 89
+Group 3: 30 students, 13 play, 17 not play
+        ID to play: 94 96 97 98 102 103 104 106 107 111 112 117 118
+Group 4: 30 students, 16 play, 14 not play
+        ID to play: 123 125 127 128 130 132 133 134 135 136 137 141 142 143 146 149
+Group 5: 30 students, 9 play, 21 not play
+        ID to play: 157 158 161 163 166 168 171 172 178
+Group 6: 30 students, 4 play, 26 not play
+        ID to play: 187 201 204 205
+Group 7: 30 students, 8 play, 22 not play
+        ID to play: 210 212 214 215 218 225 231 238
+Group 8: 30 students, 15 play, 15 not play
+        ID to play: 243 245 246 249 252 253 254 255 256 257 258 260 261 262 268
+Group 9: 30 students, 11 play, 19 not play
+        ID to play: 272 280 281 282 283 284 290 292 293 296 297
+Group 10: 30 students, 6 play, 24 not play
+        ID to play: 304 308 309 322 327 328
+Group 11: 30 students, 6 play, 24 not play
+        ID to play: 332 337 339 340 351 355
+Group 12: 30 students, 9 play, 21 not play
+        ID to play: 360 363 364 365 371 374 376 381 382
+Group 13: 30 students, 8 play, 22 not play
+        ID to play: 397 399 402 405 409 410 415 416
+Group 14: 30 students, 9 play, 21 not play
+        ID to play: 420 426 427 430 432 435 446 447 448
+Group 15: 30 students, 9 play, 21 not play
+        ID to play: 454 456 458 460 461 462 467 471 478
+Group 16: 30 students, 7 play, 23 not play
+        ID to play: 480 486 488 489 493 502 505
+Group 17: 30 students, 10 play, 20 not play
+        ID to play: 510 513 517 518 521 522 523 525 530 532
+Group 18: 30 students, 12 play, 18 not play
+        ID to play: 541 542 547 551 552 554 558 560 561 563 564 565
+Group 19: 30 students, 7 play, 23 not play
+        ID to play: 573 582 586 589 592 597 598
+
+-------------- Day: 2 | Weather: Raining and not Windy ---------------
+Group 0: 30 students, 7 play, 23 not play
+        ID to play: 0 5 8 13 14 23 24
+Group 1: 30 students, 10 play, 20 not play
+        ID to play: 30 33 34 35 46 48 53 54 57 59
+Group 2: 30 students, 10 play, 20 not play
+        ID to play: 62 65 69 70 71 72 79 82 83 89
+Group 3: 30 students, 9 play, 21 not play
+        ID to play: 91 96 97 98 103 104 109 113 117
+Group 4: 30 students, 16 play, 14 not play
+        ID to play: 122 124 125 127 128 130 132 133 134 137 141 142 143 145 146 147
+Group 5: 30 students, 11 play, 19 not play
+        ID to play: 154 156 158 163 168 170 171 172 174 178 179
+Group 6: 30 students, 9 play, 21 not play
+        ID to play: 183 185 186 187 195 201 205 206 208
+Group 7: 30 students, 5 play, 25 not play
+        ID to play: 215 218 225 234 238
+Group 8: 30 students, 12 play, 18 not play
+        ID to play: 241 243 245 246 248 252 253 254 256 260 261 262
+Group 9: 30 students, 10 play, 20 not play
+        ID to play: 272 273 276 280 283 284 285 290 293 295
+Group 10: 30 students, 10 play, 20 not play
+        ID to play: 300 301 302 303 304 306 313 315 326 327
+Group 11: 30 students, 5 play, 25 not play
+        ID to play: 332 335 340 347 351
+Group 12: 30 students, 11 play, 19 not play
+        ID to play: 360 363 364 369 371 372 373 374 376 381 387
+Group 13: 30 students, 10 play, 20 not play
+        ID to play: 395 397 399 402 409 410 414 415 416 418
+Group 14: 30 students, 5 play, 25 not play
+        ID to play: 420 422 426 446 448
+Group 15: 30 students, 10 play, 20 not play
+        ID to play: 450 451 452 455 457 460 461 462 467 471
+Group 16: 30 students, 7 play, 23 not play
+        ID to play: 491 492 493 505 507 508 509
+Group 17: 30 students, 11 play, 19 not play
+        ID to play: 516 517 518 520 522 525 528 530 531 532 534
+Group 18: 30 students, 9 play, 21 not play
+        ID to play: 541 542 551 559 560 561 563 564 565
+Group 19: 30 students, 6 play, 24 not play
+        ID to play: 572 575 582 591 597 598
+
+-------------- Day: 3 | Weather: Sunny and Humid ---------------
+Group 0: 30 students, 1 play, 29 not play
+        ID to play: 19
+Group 1: 30 students, 1 play, 29 not play
+        ID to play: 31
+Group 2: 30 students, 1 play, 29 not play
+        ID to play: 82
+Group 3: 30 students, 0 play, 30 not play
+        ID to play:
+Group 4: 30 students, 1 play, 29 not play
+        ID to play: 120
+Group 5: 30 students, 2 play, 28 not play
+        ID to play: 150 160
+Group 6: 30 students, 3 play, 27 not play
+        ID to play: 202 207 209
+Group 7: 30 students, 0 play, 30 not play
+        ID to play:
+Group 8: 30 students, 0 play, 30 not play
+        ID to play:
+Group 9: 30 students, 1 play, 29 not play
+        ID to play: 285
+Group 10: 30 students, 2 play, 28 not play
+        ID to play: 304 323
+Group 11: 30 students, 3 play, 27 not play
+        ID to play: 339 354 356
+Group 12: 30 students, 0 play, 30 not play
+        ID to play:
+Group 13: 30 students, 0 play, 30 not play
+        ID to play:
+Group 14: 30 students, 1 play, 29 not play
+        ID to play: 431
+Group 15: 30 students, 4 play, 26 not play
+        ID to play: 450 452 456 457
+Group 16: 30 students, 1 play, 29 not play
+        ID to play: 482
+Group 17: 30 students, 0 play, 30 not play
+        ID to play:
+Group 18: 30 students, 3 play, 27 not play
+        ID to play: 549 553 560
+Group 19: 30 students, 2 play, 28 not play
+        ID to play: 583 590
+
+-------------- Day: 4 | Weather: Sunny and Humid ---------------
+--- 组 8 被分割为组 8 和组 9 ---
+当前组数: 21 容量: 40
+Group 0: 30 students, 0 play, 30 not play
+        ID to play:
+Group 1: 30 students, 3 play, 27 not play
+        ID to play: 32 42 44
+Group 2: 30 students, 0 play, 30 not play
+        ID to play:
+Group 3: 30 students, 0 play, 30 not play
+        ID to play:
+Group 4: 30 students, 0 play, 30 not play
+        ID to play:
+Group 5: 30 students, 1 play, 29 not play
+        ID to play: 153
+Group 6: 30 students, 3 play, 27 not play
+        ID to play: 199 200 202
+Group 7: 30 students, 3 play, 27 not play
+        ID to play: 220 223 228
+Group 8: 15 students, 1 play, 14 not play
+        ID to play: 254
+Group 9: 15 students, 1 play, 14 not play
+        ID to play: 269
+Group 10: 30 students, 2 play, 28 not play
+        ID to play: 271 285
+Group 11: 30 students, 1 play, 29 not play
+        ID to play: 320
+Group 12: 30 students, 2 play, 28 not play
+        ID to play: 355 356
+Group 13: 30 students, 1 play, 29 not play
+        ID to play: 388
+Group 14: 30 students, 2 play, 28 not play
+        ID to play: 410 414
+Group 15: 30 students, 2 play, 28 not play
+        ID to play: 430 438
+Group 16: 30 students, 4 play, 26 not play
+        ID to play: 458 463 473 478
+Group 17: 30 students, 3 play, 27 not play
+        ID to play: 491 497 499
+Group 18: 30 students, 1 play, 29 not play
+        ID to play: 528
+Group 19: 30 students, 0 play, 30 not play
+        ID to play:
+Group 20: 30 students, 0 play, 30 not play
+        ID to play:
+
+-------------- Day: 5 | Weather: Sunny and Humid ---------------
+Group 0: 30 students, 1 play, 29 not play
+        ID to play: 19
+Group 1: 30 students, 1 play, 29 not play
+        ID to play: 58
+Group 2: 30 students, 2 play, 28 not play
+        ID to play: 87 88
+Group 3: 30 students, 1 play, 29 not play
+        ID to play: 97
+Group 4: 30 students, 2 play, 28 not play
+        ID to play: 135 144
+Group 5: 30 students, 2 play, 28 not play
+        ID to play: 154 173
+Group 6: 30 students, 0 play, 30 not play
+        ID to play:
+Group 7: 30 students, 2 play, 28 not play
+        ID to play: 219 230
+Group 8: 15 students, 2 play, 13 not play
+        ID to play: 240 242
+Group 9: 15 students, 0 play, 15 not play
+        ID to play:
+Group 10: 30 students, 1 play, 29 not play
+        ID to play: 277
+Group 11: 30 students, 2 play, 28 not play
+        ID to play: 314 319
+Group 12: 30 students, 1 play, 29 not play
+        ID to play: 350
+Group 13: 30 students, 1 play, 29 not play
+        ID to play: 383
+Group 14: 30 students, 0 play, 30 not play
+        ID to play:
+Group 15: 30 students, 1 play, 29 not play
+        ID to play: 422
+Group 16: 30 students, 2 play, 28 not play
+        ID to play: 457 462
+Group 17: 30 students, 2 play, 28 not play
+        ID to play: 481 482
+Group 18: 30 students, 1 play, 29 not play
+        ID to play: 535
+Group 19: 30 students, 0 play, 30 not play
+        ID to play:
+Group 20: 30 students, 0 play, 30 not play
+        ID to play:
+
+-------------- Day: 6 | Weather: Overcast ---------------
+Group 0: 30 students, 14 play, 16 not play
+        ID to play: 0 1 2 5 6 8 12 13 14 17 21 22 23 29
+Group 1: 30 students, 14 play, 16 not play
+        ID to play: 33 36 37 40 43 45 46 48 51 53 54 57 58 59
+Group 2: 30 students, 17 play, 13 not play
+        ID to play: 61 62 63 65 70 71 72 73 75 76 78 79 81 82 83 87 89
+Group 3: 30 students, 14 play, 16 not play
+        ID to play: 91 96 97 99 100 101 102 103 104 106 111 112 113 114
+Group 4: 30 students, 19 play, 11 not play
+        ID to play: 123 124 125 126 127 128 130 132 133 134 136 137 141 142 143 145 146 147 149
+Group 5: 30 students, 16 play, 14 not play
+        ID to play: 150 151 153 157 158 159 161 163 164 167 171 173 174 177 178 179
+Group 6: 30 students, 13 play, 17 not play
+        ID to play: 180 183 185 186 187 189 193 195 200 201 204 205 208
+Group 7: 30 students, 15 play, 15 not play
+        ID to play: 210 212 214 215 218 220 221 224 225 229 231 233 234 236 238
+Group 8: 15 students, 10 play, 5 not play
+        ID to play: 240 241 243 245 246 248 250 251 252 253
+Group 9: 15 students, 10 play, 5 not play
+        ID to play: 255 256 257 258 260 261 262 264 265 268
+Group 10: 30 students, 14 play, 16 not play
+        ID to play: 272 273 280 281 282 283 284 285 289 290 293 296 297 298
+Group 11: 30 students, 19 play, 11 not play
+        ID to play: 300 303 304 306 307 309 311 313 317 318 319 320 321 322 323 324 326 327 328
+Group 12: 30 students, 12 play, 18 not play
+        ID to play: 331 332 335 337 339 340 341 342 347 348 351 352
+Group 13: 30 students, 17 play, 13 not play
+        ID to play: 360 361 362 363 364 369 370 371 372 373 374 376 379 380 381 387 389
+Group 14: 30 students, 11 play, 19 not play
+        ID to play: 395 396 399 402 405 409 410 411 415 416 419
+Group 15: 30 students, 14 play, 16 not play
+        ID to play: 420 422 425 426 427 433 435 438 439 440 442 446 447 448
+Group 16: 30 students, 19 play, 11 not play
+        ID to play: 450 451 452 454 456 457 459 460 461 462 463 464 467 469 470 471 472 476 479
+Group 17: 30 students, 12 play, 18 not play
+        ID to play: 485 488 489 491 492 493 499 501 502 505 508 509
+Group 18: 30 students, 21 play, 9 not play
+        ID to play: 510 511 513 514 515 516 517 518 519 520 522 523 524 525 529 530 531 532 534 535 536
+Group 19: 30 students, 13 play, 17 not play
+        ID to play: 545 547 550 552 554 555 558 561 563 564 565 567 569
+Group 20: 30 students, 18 play, 12 not play
+        ID to play: 570 572 573 575 577 578 580 582 584 585 586 587 590 591 592 594 597 598
+
+-------------- Day: 7 | Weather: Sunny and Humid ---------------
+--- 组 0 和组 3 被合并为组 0 ---
+当前组数: 20 容量: 40
+Group 0: 60 students, 4 play, 56 not play
+        ID to play: 19 22 99 105
+Group 1: 30 students, 3 play, 27 not play
+        ID to play: 33 49 58
+Group 2: 30 students, 3 play, 27 not play
+        ID to play: 68 80 82
+Group 3: 30 students, 0 play, 30 not play
+        ID to play:
+Group 4: 30 students, 0 play, 30 not play
+        ID to play:
+Group 5: 30 students, 3 play, 27 not play
+        ID to play: 180 186 189
+Group 6: 30 students, 1 play, 29 not play
+        ID to play: 239
+Group 7: 15 students, 1 play, 14 not play
+        ID to play: 242
+Group 8: 15 students, 0 play, 15 not play
+        ID to play:
+Group 9: 30 students, 5 play, 25 not play
+        ID to play: 278 287 288 298 299
+Group 10: 30 students, 0 play, 30 not play
+        ID to play:
+Group 11: 30 students, 1 play, 29 not play
+        ID to play: 330
+Group 12: 30 students, 3 play, 27 not play
+        ID to play: 362 368 386
+Group 13: 30 students, 1 play, 29 not play
+        ID to play: 397
+Group 14: 30 students, 0 play, 30 not play
+        ID to play:
+Group 15: 30 students, 0 play, 30 not play
+        ID to play:
+Group 16: 30 students, 3 play, 27 not play
+        ID to play: 484 486 506
+Group 17: 30 students, 1 play, 29 not play
+        ID to play: 527
+Group 18: 30 students, 1 play, 29 not play
+        ID to play: 545
+Group 19: 30 students, 1 play, 29 not play
+        ID to play: 583
+
+-------------- Day: 8 | Weather: Sunny and Humid ---------------
+--- 组 11 被分割为组 11 和组 12 ---
+当前组数: 21 容量: 40
+--- 组 0 和组 20 被合并为组 0 ---
+当前组数: 20 容量: 40
+Group 0: 90 students, 2 play, 88 not play
+        ID to play: 3 593
+Group 1: 30 students, 2 play, 28 not play
+        ID to play: 50 55
+Group 2: 30 students, 1 play, 29 not play
+        ID to play: 80
+Group 3: 30 students, 1 play, 29 not play
+        ID to play: 122
+Group 4: 30 students, 0 play, 30 not play
+        ID to play:
+Group 5: 30 students, 1 play, 29 not play
+        ID to play: 209
+Group 6: 30 students, 4 play, 26 not play
+        ID to play: 219 220 228 230
+Group 7: 15 students, 0 play, 15 not play
+        ID to play:
+Group 8: 15 students, 1 play, 14 not play
+        ID to play: 264
+Group 9: 30 students, 0 play, 30 not play
+        ID to play:
+Group 10: 30 students, 0 play, 30 not play
+        ID to play:
+Group 11: 15 students, 1 play, 14 not play
+        ID to play: 334
+Group 12: 15 students, 1 play, 14 not play
+        ID to play: 357
+Group 13: 30 students, 2 play, 28 not play
+        ID to play: 380 382
+Group 14: 30 students, 0 play, 30 not play
+        ID to play:
+Group 15: 30 students, 1 play, 29 not play
+        ID to play: 448
+Group 16: 30 students, 1 play, 29 not play
+        ID to play: 470
+Group 17: 30 students, 2 play, 28 not play
+        ID to play: 500 503
+Group 18: 30 students, 2 play, 28 not play
+        ID to play: 512 521
+Group 19: 30 students, 0 play, 30 not play
+        ID to play:
+
+-------------- Day: 9 | Weather: Overcast ---------------
+Group 0: 90 students, 44 play, 46 not play
+        ID to play: 0 1 2 3 5 6 7 8 11 13 14 17 18 23 24 25 26 91 94 97 98 100 102 103 104 106 111 112 113 118 571 573 578 580 582 585 586 587 589 590 591 592 597 598
+Group 1: 30 students, 14 play, 16 not play
+        ID to play: 31 33 36 37 40 41 42 48 50 51 53 54 57 58
+Group 2: 30 students, 17 play, 13 not play
+        ID to play: 61 63 68 69 70 71 72 73 75 76 78 79 80 81 82 83 84
+Group 3: 30 students, 23 play, 7 not play
+        ID to play: 121 122 123 124 125 126 127 128 130 132 133 134 135 136 140 142 143 144 145 146 147 148 149
+Group 4: 30 students, 17 play, 13 not play
+        ID to play: 151 154 156 157 160 161 163 164 166 167 168 170 171 174 175 177 178
+Group 5: 30 students, 13 play, 17 not play
+        ID to play: 186 187 188 189 191 193 194 196 197 198 201 205 209
+Group 6: 30 students, 12 play, 18 not play
+        ID to play: 210 213 214 215 218 219 223 225 228 231 233 238
+Group 7: 15 students, 10 play, 5 not play
+        ID to play: 241 242 243 245 248 249 250 251 252 254
+Group 8: 15 students, 8 play, 7 not play
+        ID to play: 255 258 259 260 261 262 265 268
+Group 9: 30 students, 15 play, 15 not play
+        ID to play: 270 271 272 273 279 280 282 283 285 290 292 293 296 298 299
+Group 10: 30 students, 18 play, 12 not play
+        ID to play: 300 301 302 304 308 309 311 313 316 317 318 319 320 321 322 323 327 328
+Group 11: 15 students, 6 play, 9 not play
+        ID to play: 330 332 337 340 341 342
+Group 12: 15 students, 5 play, 10 not play
+        ID to play: 346 351 353 354 357
+Group 13: 30 students, 17 play, 13 not play
+        ID to play: 360 362 363 364 365 366 369 371 372 373 374 376 378 381 387 388 389
+Group 14: 30 students, 17 play, 13 not play
+        ID to play: 390 395 397 399 402 404 405 406 407 409 410 411 412 415 416 417 418
+Group 15: 30 students, 15 play, 15 not play
+        ID to play: 420 422 426 430 432 433 434 435 436 437 439 442 444 446 448
+Group 16: 30 students, 15 play, 15 not play
+        ID to play: 451 452 454 455 457 459 460 461 462 467 468 469 470 471 472
+Group 17: 30 students, 18 play, 12 not play
+        ID to play: 480 482 486 487 489 491 492 493 495 500 501 502 504 505 506 507 508 509
+Group 18: 30 students, 16 play, 14 not play
+        ID to play: 512 514 515 516 517 518 519 522 523 525 529 530 532 533 534 539
+Group 19: 30 students, 10 play, 20 not play
+        ID to play: 547 551 552 553 557 558 560 564 565 567
+
+-------------- Day: 10 | Weather: Sunny and Humid ---------------
+Group 0: 90 students, 3 play, 87 not play
+        ID to play: 98 116 599
+Group 1: 30 students, 1 play, 29 not play
+        ID to play: 43
+Group 2: 30 students, 0 play, 30 not play
+        ID to play:
+Group 3: 30 students, 1 play, 29 not play
+        ID to play: 145
+Group 4: 30 students, 1 play, 29 not play
+        ID to play: 152
+Group 5: 30 students, 1 play, 29 not play
+        ID to play: 198
+Group 6: 30 students, 1 play, 29 not play
+        ID to play: 235
+Group 7: 15 students, 0 play, 15 not play
+        ID to play:
+Group 8: 15 students, 2 play, 13 not play
+        ID to play: 259 269
+Group 9: 30 students, 3 play, 27 not play
+        ID to play: 276 281 294
+Group 10: 30 students, 0 play, 30 not play
+        ID to play:
+Group 11: 15 students, 1 play, 14 not play
+        ID to play: 341
+Group 12: 15 students, 1 play, 14 not play
+        ID to play: 348
+Group 13: 30 students, 3 play, 27 not play
+        ID to play: 367 387 388
+Group 14: 30 students, 1 play, 29 not play
+        ID to play: 406
+Group 15: 30 students, 0 play, 30 not play
+        ID to play:
+Group 16: 30 students, 2 play, 28 not play
+        ID to play: 463 477
+Group 17: 30 students, 2 play, 28 not play
+        ID to play: 482 502
+Group 18: 30 students, 0 play, 30 not play
+        ID to play:
+Group 19: 30 students, 1 play, 29 not play
+        ID to play: 542
+
+-------------- Day: 11 | Weather: Overcast ---------------
+Group 0: 90 students, 42 play, 48 not play
+        ID to play: 0 2 5 6 7 8 9 13 14 17 21 24 28 91 94 96 97 98 102 103 107 110 111 114 115 117 572 573 575 577 578 579 580 582 584 586 589 591 594 597 598 599
+Group 1: 30 students, 16 play, 14 not play
+        ID to play: 30 33 34 35 37 39 42 43 46 48 49 53 54 57 58 59
+Group 2: 30 students, 15 play, 15 not play
+        ID to play: 61 63 65 67 69 70 71 72 75 76 78 80 83 85 87
+Group 3: 30 students, 16 play, 14 not play
+        ID to play: 120 124 125 126 127 128 130 133 134 135 136 142 143 145 146 147
+Group 4: 30 students, 16 play, 14 not play
+        ID to play: 150 151 156 157 158 163 164 168 170 171 172 174 175 176 177 178
+Group 5: 30 students, 12 play, 18 not play
+        ID to play: 182 183 184 185 187 188 191 195 199 205 206 208
+Group 6: 30 students, 11 play, 19 not play
+        ID to play: 210 212 214 215 218 219 223 225 228 231 234
+Group 7: 15 students, 12 play, 3 not play
+        ID to play: 240 241 243 245 246 247 248 249 250 252 253 254
+Group 8: 15 students, 11 play, 4 not play
+        ID to play: 256 258 260 261 262 264 265 266 267 268 269
+Group 9: 30 students, 17 play, 13 not play
+        ID to play: 270 272 274 276 279 280 281 282 283 284 285 287 289 291 292 293 299
+Group 10: 30 students, 16 play, 14 not play
+        ID to play: 301 303 305 306 310 312 313 316 317 319 320 322 324 326 327 328
+Group 11: 15 students, 9 play, 6 not play
+        ID to play: 330 331 332 333 335 336 337 339 340
+Group 12: 15 students, 5 play, 10 not play
+        ID to play: 346 347 350 351 356
+Group 13: 30 students, 17 play, 13 not play
+        ID to play: 360 361 363 364 365 366 369 371 372 373 374 376 378 379 381 382 389
+Group 14: 30 students, 14 play, 16 not play
+        ID to play: 390 393 395 396 397 399 402 404 405 409 410 415 417 418
+Group 15: 30 students, 13 play, 17 not play
+        ID to play: 420 422 426 427 430 435 436 437 440 442 444 446 448
+Group 16: 30 students, 17 play, 13 not play
+        ID to play: 450 452 456 457 459 460 461 464 467 468 469 470 471 472 475 478 479
+Group 17: 30 students, 16 play, 14 not play
+        ID to play: 484 487 488 489 491 493 495 498 501 502 503 504 505 506 507 509
+Group 18: 30 students, 19 play, 11 not play
+        ID to play: 510 514 516 517 518 519 520 521 522 523 524 525 528 530 531 532 533 534 535
+Group 19: 30 students, 14 play, 16 not play
+        ID to play: 541 543 544 547 551 553 554 557 558 560 561 562 565 567
+
+-------------- Day: 12 | Weather: Overcast ---------------
+Group 0: 90 students, 48 play, 42 not play
+        ID to play: 0 2 3 5 6 7 9 12 13 14 15 18 21 23 24 25 27 28 29 90 91 92 94 96 97 98 99 101 102 104 106 109 111 112 113 114 117 572 575 578 580 582 586 590 591 594 597 598
+Group 1: 30 students, 15 play, 15 not play
+        ID to play: 30 33 37 41 43 45 46 49 51 53 54 55 57 58 59
+Group 2: 30 students, 20 play, 10 not play
+        ID to play: 61 62 63 65 67 69 70 71 72 75 76 78 79 80 81 82 83 87 88 89
+Group 3: 30 students, 20 play, 10 not play
+        ID to play: 123 124 125 126 128 129 130 132 133 134 135 136 140 141 142 143 144 146 147 148
+Group 4: 30 students, 20 play, 10 not play
+        ID to play: 150 151 153 156 157 158 162 163 164 166 167 168 171 172 173 175 176 177 178 179
+Group 5: 30 students, 12 play, 18 not play
+        ID to play: 183 185 186 187 190 193 194 198 201 202 205 208
+Group 6: 30 students, 12 play, 18 not play
+        ID to play: 210 212 215 218 223 225 230 231 233 234 237 238
+Group 7: 15 students, 11 play, 4 not play
+        ID to play: 240 241 243 244 245 246 248 249 252 253 254
+Group 8: 15 students, 9 play, 6 not play
+        ID to play: 256 257 258 260 261 262 264 265 268
+Group 9: 30 students, 15 play, 15 not play
+        ID to play: 272 273 279 280 281 283 285 286 287 289 290 292 293 294 296
+Group 10: 30 students, 17 play, 13 not play
+        ID to play: 300 301 302 304 306 307 308 309 313 319 320 321 322 324 326 327 328
+Group 11: 15 students, 8 play, 7 not play
+        ID to play: 330 332 335 336 339 340 341 342
+Group 12: 15 students, 5 play, 10 not play
+        ID to play: 345 350 351 352 357
+Group 13: 30 students, 17 play, 13 not play
+        ID to play: 360 361 362 364 365 366 371 372 373 374 376 378 381 382 384 387 388
+Group 14: 30 students, 16 play, 14 not play
+        ID to play: 390 391 392 395 397 399 401 405 409 410 411 412 415 416 417 418
+Group 15: 30 students, 12 play, 18 not play
+        ID to play: 420 426 427 432 434 435 436 439 442 446 447 448
+Group 16: 30 students, 11 play, 19 not play
+        ID to play: 451 452 457 461 462 463 465 467 469 471 472
+Group 17: 30 students, 10 play, 20 not play
+        ID to play: 480 486 489 492 493 499 500 502 505 509
+Group 18: 30 students, 14 play, 16 not play
+        ID to play: 511 513 516 517 518 520 522 523 525 529 530 532 535 536
+Group 19: 30 students, 12 play, 18 not play
+        ID to play: 542 551 553 554 557 558 559 560 561 563 565 567
+
+-------------- Day: 13 | Weather: Raining and Windy ---------------
+Group 0: 90 students, 4 play, 86 not play
+        ID to play: 21 91 101 577
+Group 1: 30 students, 3 play, 27 not play
+        ID to play: 37 46 49
+Group 2: 30 students, 3 play, 27 not play
+        ID to play: 60 70 81
+Group 3: 30 students, 3 play, 27 not play
+        ID to play: 120 123 144
+Group 4: 30 students, 2 play, 28 not play
+        ID to play: 153 179
+Group 5: 30 students, 1 play, 29 not play
+        ID to play: 191
+Group 6: 30 students, 1 play, 29 not play
+        ID to play: 229
+Group 7: 15 students, 2 play, 13 not play
+        ID to play: 242 253
+Group 8: 15 students, 1 play, 14 not play
+        ID to play: 262
+Group 9: 30 students, 2 play, 28 not play
+        ID to play: 270 284
+Group 10: 30 students, 0 play, 30 not play
+        ID to play:
+Group 11: 15 students, 0 play, 15 not play
+        ID to play:
+Group 12: 15 students, 0 play, 15 not play
+        ID to play:
+Group 13: 30 students, 5 play, 25 not play
+        ID to play: 361 371 374 381 387
+Group 14: 30 students, 1 play, 29 not play
+        ID to play: 410
+Group 15: 30 students, 3 play, 27 not play
+        ID to play: 432 442 447
+Group 16: 30 students, 4 play, 26 not play
+        ID to play: 450 454 462 463
+Group 17: 30 students, 4 play, 26 not play
+        ID to play: 480 491 498 506
+Group 18: 30 students, 6 play, 24 not play
+        ID to play: 516 522 523 528 533 538
+Group 19: 30 students, 2 play, 28 not play
+        ID to play: 555 562
+
+-------------- Day: 14 | Weather: Overcast ---------------
+Group 0: 90 students, 51 play, 39 not play
+        ID to play: 1 2 3 4 5 6 7 8 9 12 13 14 15 21 23 24 25 27 29 91 94 96 97 98 102 103 104 105 107 109 111 112 113 114 117 118 119 572 573 575 582 583 585 586 587 591 592 594 596 597 598
+Group 1: 30 students, 17 play, 13 not play
+        ID to play: 30 31 33 34 37 38 40 41 42 48 49 51 54 55 57 58 59
+Group 2: 30 students, 16 play, 14 not play
+        ID to play: 62 63 65 68 69 70 71 72 75 76 78 80 82 83 87 89
+Group 3: 30 students, 16 play, 14 not play
+        ID to play: 121 125 126 128 130 133 134 135 136 142 143 144 145 146 147 149
+Group 4: 30 students, 20 play, 10 not play
+        ID to play: 151 152 154 156 157 158 159 161 163 164 167 168 170 171 172 173 174 177 178 179
+Group 5: 30 students, 12 play, 18 not play
+        ID to play: 183 184 186 187 188 191 193 200 201 205 206 208
+Group 6: 30 students, 13 play, 17 not play
+        ID to play: 212 214 215 218 220 225 229 230 231 233 234 236 238
+Group 7: 15 students, 10 play, 5 not play
+        ID to play: 240 241 243 245 246 248 249 252 253 254
+Group 8: 15 students, 10 play, 5 not play
+        ID to play: 255 256 257 258 260 261 262 264 265 268
+Group 9: 30 students, 20 play, 10 not play
+        ID to play: 270 271 272 273 274 276 279 280 281 282 283 285 287 289 292 293 296 297 298 299
+Group 10: 30 students, 17 play, 13 not play
+        ID to play: 300 301 302 303 304 306 309 311 313 317 318 319 321 322 326 327 328
+Group 11: 15 students, 11 play, 4 not play
+        ID to play: 330 331 332 335 336 337 338 339 340 341 342
+Group 12: 15 students, 4 play, 11 not play
+        ID to play: 347 348 351 357
+Group 13: 30 students, 15 play, 15 not play
+        ID to play: 360 361 362 363 364 368 371 372 373 374 376 378 381 386 388
+Group 14: 30 students, 15 play, 15 not play
+        ID to play: 395 396 398 399 402 405 407 409 410 411 412 415 416 417 418
+Group 15: 30 students, 12 play, 18 not play
+        ID to play: 420 426 429 432 433 434 435 436 437 442 446 448
+Group 16: 30 students, 11 play, 19 not play
+        ID to play: 450 454 455 456 458 461 462 467 469 471 472
+Group 17: 30 students, 14 play, 16 not play
+        ID to play: 481 487 488 489 491 492 493 496 497 501 504 505 508 509
+Group 18: 30 students, 16 play, 14 not play
+        ID to play: 513 514 515 517 518 520 522 523 525 529 530 531 532 533 534 536
+Group 19: 30 students, 13 play, 17 not play
+        ID to play: 541 542 546 547 551 554 555 559 560 561 563 565 567
+
+-------------- Day: 15 | Weather: Overcast ---------------
+Group 0: 90 students, 40 play, 50 not play
+        ID to play: 0 1 2 5 6 7 8 9 12 14 19 23 24 27 91 94 97 98 99 101 102 107 111 112 113 117 573 575 577 578 579 580 582 583 584 585 593 594 597 598
+Group 1: 30 students, 13 play, 17 not play
+        ID to play: 30 34 37 40 43 46 47 48 51 53 54 57 58
+Group 2: 30 students, 12 play, 18 not play
+        ID to play: 60 62 63 66 67 71 76 78 80 82 83 88
+Group 3: 30 students, 20 play, 10 not play
+        ID to play: 121 123 124 127 128 130 133 134 135 136 137 140 141 142 143 144 145 146 147 149
+Group 4: 30 students, 16 play, 14 not play
+        ID to play: 151 154 157 158 159 161 163 167 168 170 171 172 173 174 178 179
+Group 5: 30 students, 10 play, 20 not play
+        ID to play: 180 183 184 186 190 194 199 201 205 208
+Group 6: 30 students, 10 play, 20 not play
+        ID to play: 210 212 215 218 219 224 230 231 236 238
+Group 7: 15 students, 11 play, 4 not play
+        ID to play: 240 241 243 245 246 248 249 250 252 253 254
+Group 8: 15 students, 11 play, 4 not play
+        ID to play: 255 256 257 258 259 260 261 262 264 265 268
+Group 9: 30 students, 16 play, 14 not play
+        ID to play: 273 276 279 280 281 282 283 285 287 288 289 290 292 293 295 299
+Group 10: 30 students, 21 play, 9 not play
+        ID to play: 300 301 302 303 304 306 307 308 309 312 313 315 316 317 318 319 322 324 326 327 328
+Group 11: 15 students, 7 play, 8 not play
+        ID to play: 330 332 335 336 339 340 341
+Group 12: 15 students, 8 play, 7 not play
+        ID to play: 348 350 351 352 355 356 357 358
+Group 13: 30 students, 13 play, 17 not play
+        ID to play: 361 362 363 364 366 367 373 374 376 377 378 380 381
+Group 14: 30 students, 14 play, 16 not play
+        ID to play: 390 395 397 398 399 402 405 409 410 411 412 413 415 418
+Group 15: 30 students, 12 play, 18 not play
+        ID to play: 420 425 426 427 430 432 435 442 445 446 448 449
+Group 16: 30 students, 12 play, 18 not play
+        ID to play: 454 459 460 461 462 463 464 467 469 471 472 478
+Group 17: 30 students, 14 play, 16 not play
+        ID to play: 486 487 489 492 493 495 499 501 504 505 506 507 508 509
+Group 18: 30 students, 18 play, 12 not play
+        ID to play: 510 511 513 515 516 517 518 520 522 523 525 528 529 530 531 532 536 537
+Group 19: 30 students, 12 play, 18 not play
+        ID to play: 542 547 551 552 554 558 559 561 563 564 565 567
+
+-------------- Day: 16 | Weather: Overcast ---------------
+Group 0: 90 students, 47 play, 43 not play
+        ID to play: 0 1 2 4 5 6 7 8 9 11 13 14 17 19 23 28 29 90 97 98 99 100 101 102 103 104 106 111 112 113 117 118 573 575 578 580 582 585 586 588 589 591 593 594 597 598 599
+Group 1: 30 students, 15 play, 15 not play
+        ID to play: 30 33 34 35 36 38 39 40 42 45 50 51 53 57 58
+Group 2: 30 students, 12 play, 18 not play
+        ID to play: 62 63 67 70 72 75 80 81 82 83 85 89
+Group 3: 30 students, 18 play, 12 not play
+        ID to play: 120 121 123 124 125 126 128 130 132 133 136 141 142 143 144 146 148 149
+Group 4: 30 students, 20 play, 10 not play
+        ID to play: 151 154 156 157 158 160 161 163 164 166 167 168 170 171 172 173 174 177 178 179
+Group 5: 30 students, 17 play, 13 not play
+        ID to play: 182 183 184 185 186 187 188 191 195 196 201 202 204 205 207 208 209
+Group 6: 30 students, 16 play, 14 not play
+        ID to play: 210 212 214 215 218 219 221 224 225 228 229 234 235 236 238 239
+Group 7: 15 students, 9 play, 6 not play
+        ID to play: 241 242 243 245 246 248 251 252 253
+Group 8: 15 students, 9 play, 6 not play
+        ID to play: 255 256 257 260 261 262 264 265 268
+Group 9: 30 students, 12 play, 18 not play
+        ID to play: 271 272 273 280 282 283 284 289 290 292 293 295
+Group 10: 30 students, 13 play, 17 not play
+        ID to play: 301 303 306 308 309 313 317 318 319 320 321 322 327
+Group 11: 15 students, 6 play, 9 not play
+        ID to play: 332 335 338 340 342 343
+Group 12: 15 students, 8 play, 7 not play
+        ID to play: 345 348 351 352 353 354 355 356
+Group 13: 30 students, 19 play, 11 not play
+        ID to play: 360 361 362 364 365 366 367 368 369 371 372 373 374 376 380 381 385 387 389
+Group 14: 30 students, 12 play, 18 not play
+        ID to play: 390 395 397 399 405 410 412 413 415 416 417 419
+Group 15: 30 students, 15 play, 15 not play
+        ID to play: 420 425 426 427 430 432 433 435 436 437 439 443 444 446 448
+Group 16: 30 students, 13 play, 17 not play
+        ID to play: 454 455 457 460 461 463 466 467 470 471 472 478 479
+Group 17: 30 students, 12 play, 18 not play
+        ID to play: 487 489 490 492 493 495 502 505 506 507 508 509
+Group 18: 30 students, 16 play, 14 not play
+        ID to play: 512 513 516 517 518 519 520 522 523 525 528 529 530 531 536 538
+Group 19: 30 students, 17 play, 13 not play
+        ID to play: 542 544 547 549 550 554 556 557 558 559 560 561 563 565 566 567 569
+
+-------------- Day: 17 | Weather: Raining and Windy ---------------
+Group 0: 90 students, 5 play, 85 not play
+        ID to play: 8 17 27 29 587
+Group 1: 30 students, 1 play, 29 not play
+        ID to play: 36
+Group 2: 30 students, 2 play, 28 not play
+        ID to play: 73 79
+Group 3: 30 students, 4 play, 26 not play
+        ID to play: 123 129 132 136
+Group 4: 30 students, 5 play, 25 not play
+        ID to play: 150 152 165 166 179
+Group 5: 30 students, 2 play, 28 not play
+        ID to play: 199 200
+Group 6: 30 students, 0 play, 30 not play
+        ID to play:
+Group 7: 15 students, 2 play, 13 not play
+        ID to play: 242 250
+Group 8: 15 students, 1 play, 14 not play
+        ID to play: 264
+Group 9: 30 students, 3 play, 27 not play
+        ID to play: 285 287 293
+Group 10: 30 students, 6 play, 24 not play
+        ID to play: 300 303 312 318 319 324
+Group 11: 15 students, 2 play, 13 not play
+        ID to play: 335 339
+Group 12: 15 students, 2 play, 13 not play
+        ID to play: 354 356
+Group 13: 30 students, 1 play, 29 not play
+        ID to play: 365
+Group 14: 30 students, 4 play, 26 not play
+        ID to play: 396 404 410 416
+Group 15: 30 students, 2 play, 28 not play
+        ID to play: 436 438
+Group 16: 30 students, 5 play, 25 not play
+        ID to play: 454 458 459 460 468
+Group 17: 30 students, 4 play, 26 not play
+        ID to play: 481 484 491 493
+Group 18: 30 students, 2 play, 28 not play
+        ID to play: 519 520
+Group 19: 30 students, 2 play, 28 not play
+        ID to play: 557 562
+
+-------------- Day: 18 | Weather: Sunny and not Humid ---------------
+Group 0: 90 students, 1 play, 89 not play
+        ID to play: 591
+Group 1: 30 students, 3 play, 27 not play
+        ID to play: 32 42 49
+Group 2: 30 students, 2 play, 28 not play
+        ID to play: 69 80
+Group 3: 30 students, 2 play, 28 not play
+        ID to play: 121 145
+Group 4: 30 students, 3 play, 27 not play
+        ID to play: 150 154 163
+Group 5: 30 students, 2 play, 28 not play
+        ID to play: 183 186
+Group 6: 30 students, 2 play, 28 not play
+        ID to play: 220 236
+Group 7: 15 students, 1 play, 14 not play
+        ID to play: 244
+Group 8: 15 students, 2 play, 13 not play
+        ID to play: 264 265
+Group 9: 30 students, 2 play, 28 not play
+        ID to play: 274 292
+Group 10: 30 students, 1 play, 29 not play
+        ID to play: 301
+Group 11: 15 students, 2 play, 13 not play
+        ID to play: 331 336
+Group 12: 15 students, 1 play, 14 not play
+        ID to play: 356
+Group 13: 30 students, 3 play, 27 not play
+        ID to play: 382 388 389
+Group 14: 30 students, 2 play, 28 not play
+        ID to play: 411 419
+Group 15: 30 students, 1 play, 29 not play
+        ID to play: 442
+Group 16: 30 students, 3 play, 27 not play
+        ID to play: 464 469 475
+Group 17: 30 students, 3 play, 27 not play
+        ID to play: 480 487 508
+Group 18: 30 students, 2 play, 28 not play
+        ID to play: 516 533
+Group 19: 30 students, 3 play, 27 not play
+        ID to play: 557 565 569
+
+-------------- Day: 19 | Weather: Raining and Windy ---------------
+--- 组 8 和组 17 被合并为组 8 ---
+当前组数: 19 容量: 40
+Group 0: 90 students, 5 play, 85 not play
+        ID to play: 3 21 102 591 593
+Group 1: 30 students, 1 play, 29 not play
+        ID to play: 50
+Group 2: 30 students, 2 play, 28 not play
+        ID to play: 67 88
+Group 3: 30 students, 2 play, 28 not play
+        ID to play: 124 145
+Group 4: 30 students, 2 play, 28 not play
+        ID to play: 164 173
+Group 5: 30 students, 2 play, 28 not play
+        ID to play: 195 196
+Group 6: 30 students, 3 play, 27 not play
+        ID to play: 230 233 234
+Group 7: 15 students, 2 play, 13 not play
+        ID to play: 243 250
+Group 8: 45 students, 2 play, 43 not play
+        ID to play: 496 504
+Group 9: 30 students, 1 play, 29 not play
+        ID to play: 279
+Group 10: 30 students, 1 play, 29 not play
+        ID to play: 301
+Group 11: 15 students, 1 play, 14 not play
+        ID to play: 331
+Group 12: 15 students, 0 play, 15 not play
+        ID to play:
+Group 13: 30 students, 3 play, 27 not play
+        ID to play: 362 372 385
+Group 14: 30 students, 3 play, 27 not play
+        ID to play: 396 397 415
+Group 15: 30 students, 5 play, 25 not play
+        ID to play: 430 436 439 440 442
+Group 16: 30 students, 0 play, 30 not play
+        ID to play:
+Group 17: 30 students, 2 play, 28 not play
+        ID to play: 510 520
+Group 18: 30 students, 1 play, 29 not play
+        ID to play: 558
+
+-------------- Day: 20 | Weather: Sunny and Humid ---------------
+--- 组 1 和组 8 被合并为组 1 ---
+当前组数: 18 容量: 40
+Group 0: 90 students, 5 play, 85 not play
+        ID to play: 7 15 16 27 28
+Group 1: 75 students, 4 play, 71 not play
+        ID to play: 45 56 497 500
+Group 2: 30 students, 0 play, 30 not play
+        ID to play:
+Group 3: 30 students, 3 play, 27 not play
+        ID to play: 135 138 139
+Group 4: 30 students, 1 play, 29 not play
+        ID to play: 156
+Group 5: 30 students, 1 play, 29 not play
+        ID to play: 185
+Group 6: 30 students, 3 play, 27 not play
+        ID to play: 214 229 235
+Group 7: 15 students, 1 play, 14 not play
+        ID to play: 242
+Group 8: 30 students, 1 play, 29 not play
+        ID to play: 299
+Group 9: 30 students, 2 play, 28 not play
+        ID to play: 305 308
+Group 10: 15 students, 1 play, 14 not play
+        ID to play: 335
+Group 11: 15 students, 0 play, 15 not play
+        ID to play:
+Group 12: 30 students, 2 play, 28 not play
+        ID to play: 380 389
+Group 13: 30 students, 3 play, 27 not play
+        ID to play: 393 396 407
+Group 14: 30 students, 3 play, 27 not play
+        ID to play: 430 433 436
+Group 15: 30 students, 4 play, 26 not play
+        ID to play: 460 463 466 472
+Group 16: 30 students, 0 play, 30 not play
+        ID to play:
+Group 17: 30 students, 1 play, 29 not play
+        ID to play: 553
+
+-------------- Day: 21 | Weather: Overcast ---------------
+Group 0: 90 students, 47 play, 43 not play
+        ID to play: 0 2 5 6 7 9 10 12 13 14 17 18 20 21 23 27 90 91 96 97 99 102 103 106 107 111 112 113 114 116 117 570 573 575 577 578 579 580 582 584 586 589 591 593 594 597 598
+Group 1: 75 students, 40 play, 35 not play
+        ID to play: 30 33 34 35 36 45 46 48 49 50 51 52 54 57 58 59 256 258 260 261 262 264 267 268 481 484 486 488 489 490 492 493 499 500 501 504 505 507 508 509
+Group 2: 30 students, 14 play, 16 not play
+        ID to play: 60 62 65 67 68 71 73 76 78 80 82 83 87 89
+Group 3: 30 students, 18 play, 12 not play
+        ID to play: 120 121 122 124 125 127 129 130 132 134 136 141 142 143 144 146 147 149
+Group 4: 30 students, 14 play, 16 not play
+        ID to play: 151 156 157 161 162 163 165 170 171 173 175 177 178 179
+Group 5: 30 students, 15 play, 15 not play
+        ID to play: 180 182 183 184 186 187 188 189 193 196 199 201 205 207 208
+Group 6: 30 students, 10 play, 20 not play
+        ID to play: 210 214 215 218 225 229 230 233 234 238
+Group 7: 15 students, 10 play, 5 not play
+        ID to play: 240 243 245 246 248 249 250 252 253 254
+Group 8: 30 students, 20 play, 10 not play
+        ID to play: 270 273 274 276 280 281 282 283 284 285 287 288 289 290 292 293 295 297 298 299
+Group 9: 30 students, 19 play, 11 not play
+        ID to play: 300 301 302 303 304 306 307 309 313 315 316 317 318 319 322 324 326 327 328
+Group 10: 15 students, 7 play, 8 not play
+        ID to play: 331 332 335 337 339 341 342
+Group 11: 15 students, 5 play, 10 not play
+        ID to play: 347 348 349 356 357
+Group 12: 30 students, 17 play, 13 not play
+        ID to play: 360 361 362 364 366 369 371 372 373 374 376 377 378 380 381 385 389
+Group 13: 30 students, 14 play, 16 not play
+        ID to play: 395 396 397 399 401 402 405 409 410 412 414 415 416 417
+Group 14: 30 students, 14 play, 16 not play
+        ID to play: 420 424 426 427 429 431 432 433 435 439 440 446 447 448
+Group 15: 30 students, 18 play, 12 not play
+        ID to play: 450 451 454 457 460 461 462 463 464 466 467 468 469 471 472 475 478 479
+Group 16: 30 students, 20 play, 10 not play
+        ID to play: 510 511 513 514 516 517 518 520 521 522 523 524 530 531 532 533 534 535 536 539
+Group 17: 30 students, 14 play, 16 not play
+        ID to play: 541 542 547 549 551 552 555 557 558 559 560 561 565 567
+
+-------------- Day: 22 | Weather: Overcast ---------------
+Group 0: 90 students, 40 play, 50 not play
+        ID to play: 2 5 6 8 9 10 13 14 15 17 18 23 24 26 29 91 94 96 98 101 102 103 104 107 112 114 117 118 570 572 573 575 580 582 586 587 589 591 594 598
+Group 1: 75 students, 36 play, 39 not play
+        ID to play: 33 34 37 40 41 45 46 47 48 51 52 53 54 57 58 59 256 257 260 261 262 264 268 480 484 487 489 493 497 498 501 502 505 507 508 509
+Group 2: 30 students, 12 play, 18 not play
+        ID to play: 65 68 69 70 71 75 76 79 80 81 83 84
+Group 3: 30 students, 16 play, 14 not play
+        ID to play: 124 125 127 128 129 130 132 134 136 137 141 142 143 144 146 147
+Group 4: 30 students, 18 play, 12 not play
+        ID to play: 151 154 157 158 159 161 163 164 166 167 168 170 171 172 173 174 177 178
+Group 5: 30 students, 12 play, 18 not play
+        ID to play: 180 182 185 187 194 196 197 200 201 205 207 208
+Group 6: 30 students, 14 play, 16 not play
+        ID to play: 210 214 215 218 220 224 225 229 230 231 233 234 236 238
+Group 7: 15 students, 10 play, 5 not play
+        ID to play: 240 241 245 246 248 249 250 252 253 254
+Group 8: 30 students, 16 play, 14 not play
+        ID to play: 270 272 273 279 280 281 282 283 284 289 290 293 295 296 297 299
+Group 9: 30 students, 16 play, 14 not play
+        ID to play: 300 301 303 304 306 307 309 311 312 317 318 322 325 326 327 328
+Group 10: 15 students, 7 play, 8 not play
+        ID to play: 331 332 335 336 339 340 342
+Group 11: 15 students, 3 play, 12 not play
+        ID to play: 347 351 357
+Group 12: 30 students, 18 play, 12 not play
+        ID to play: 360 362 363 364 365 366 369 371 372 376 378 379 381 384 385 386 388 389
+Group 13: 30 students, 16 play, 14 not play
+        ID to play: 390 395 396 399 402 403 405 407 409 410 412 413 414 415 416 417
+Group 14: 30 students, 14 play, 16 not play
+        ID to play: 420 422 426 427 430 432 433 435 440 441 444 446 448 449
+Group 15: 30 students, 15 play, 15 not play
+        ID to play: 451 453 454 457 458 460 461 462 463 464 467 471 475 478 479
+Group 16: 30 students, 15 play, 15 not play
+        ID to play: 511 513 514 516 518 520 522 524 525 528 530 532 533 534 535
+Group 17: 30 students, 15 play, 15 not play
+        ID to play: 541 542 544 546 547 549 551 554 555 557 558 560 561 565 567
+
+-------------- Day: 23 | Weather: Sunny and not Humid ---------------
+--- 组 0 和组 8 被合并为组 0 ---
+当前组数: 17 容量: 40
+Group 0: 120 students, 6 play, 114 not play
+        ID to play: 9 11 107 113 583 585
+Group 1: 75 students, 2 play, 73 not play
+        ID to play: 497 508
+Group 2: 30 students, 1 play, 29 not play
+        ID to play: 66
+Group 3: 30 students, 3 play, 27 not play
+        ID to play: 137 141 143
+Group 4: 30 students, 4 play, 26 not play
+        ID to play: 151 160 161 173
+Group 5: 30 students, 3 play, 27 not play
+        ID to play: 185 201 207
+Group 6: 30 students, 3 play, 27 not play
+        ID to play: 231 234 237
+Group 7: 15 students, 1 play, 14 not play
+        ID to play: 247
+Group 8: 30 students, 1 play, 29 not play
+        ID to play: 328
+Group 9: 15 students, 0 play, 15 not play
+        ID to play:
+Group 10: 15 students, 0 play, 15 not play
+        ID to play:
+Group 11: 30 students, 1 play, 29 not play
+        ID to play: 389
+Group 12: 30 students, 2 play, 28 not play
+        ID to play: 404 409
+Group 13: 30 students, 3 play, 27 not play
+        ID to play: 434 441 448
+Group 14: 30 students, 4 play, 26 not play
+        ID to play: 456 462 472 478
+Group 15: 30 students, 2 play, 28 not play
+        ID to play: 519 534
+Group 16: 30 students, 3 play, 27 not play
+        ID to play: 542 554 561
+
+-------------- Day: 24 | Weather: Sunny and not Humid ---------------
+Group 0: 120 students, 8 play, 112 not play
+        ID to play: 6 19 22 100 105 579 287 298
+Group 1: 75 students, 3 play, 72 not play
+        ID to play: 31 48 268
+Group 2: 30 students, 5 play, 25 not play
+        ID to play: 60 65 75 76 85
+Group 3: 30 students, 2 play, 28 not play
+        ID to play: 125 135
+Group 4: 30 students, 0 play, 30 not play
+        ID to play:
+Group 5: 30 students, 5 play, 25 not play
+        ID to play: 182 183 186 194 204
+Group 6: 30 students, 1 play, 29 not play
+        ID to play: 219
+Group 7: 15 students, 1 play, 14 not play
+        ID to play: 242
+Group 8: 30 students, 2 play, 28 not play
+        ID to play: 324 326
+Group 9: 15 students, 1 play, 14 not play
+        ID to play: 344
+Group 10: 15 students, 1 play, 14 not play
+        ID to play: 358
+Group 11: 30 students, 0 play, 30 not play
+        ID to play:
+Group 12: 30 students, 2 play, 28 not play
+        ID to play: 401 409
+Group 13: 30 students, 1 play, 29 not play
+        ID to play: 438
+Group 14: 30 students, 0 play, 30 not play
+        ID to play:
+Group 15: 30 students, 2 play, 28 not play
+        ID to play: 515 527
+Group 16: 30 students, 3 play, 27 not play
+        ID to play: 550 565 569
+
+-------------- Day: 25 | Weather: Sunny and not Humid ---------------
+Group 0: 120 students, 13 play, 107 not play
+        ID to play: 0 5 6 9 14 15 570 573 585 273 279 282 287
+Group 1: 75 students, 7 play, 68 not play
+        ID to play: 36 39 40 255 266 504 506
+Group 2: 30 students, 1 play, 29 not play
+        ID to play: 70
+Group 3: 30 students, 1 play, 29 not play
+        ID to play: 124
+Group 4: 30 students, 3 play, 27 not play
+        ID to play: 152 153 157
+Group 5: 30 students, 1 play, 29 not play
+        ID to play: 200
+Group 6: 30 students, 1 play, 29 not play
+        ID to play: 213
+Group 7: 15 students, 0 play, 15 not play
+        ID to play:
+Group 8: 30 students, 1 play, 29 not play
+        ID to play: 324
+Group 9: 15 students, 2 play, 13 not play
+        ID to play: 339 340
+Group 10: 15 students, 1 play, 14 not play
+        ID to play: 355
+Group 11: 30 students, 1 play, 29 not play
+        ID to play: 369
+Group 12: 30 students, 3 play, 27 not play
+        ID to play: 404 414 417
+Group 13: 30 students, 1 play, 29 not play
+        ID to play: 422
+Group 14: 30 students, 3 play, 27 not play
+        ID to play: 458 461 470
+Group 15: 30 students, 2 play, 28 not play
+        ID to play: 510 511
+Group 16: 30 students, 2 play, 28 not play
+        ID to play: 561 564
+
+-------------- Day: 26 | Weather: Raining and not Windy ---------------
+Group 0: 120 students, 32 play, 88 not play
+        ID to play: 0 2 5 9 91 96 97 98 102 103 112 113 117 572 573 575 578 580 586 591 597 598 272 273 276 280 281 282 287 289 290 297
+Group 1: 75 students, 23 play, 52 not play
+        ID to play: 33 42 46 51 54 57 58 59 255 256 260 261 262 265 482 486 489 493 497 499 501 502 505
+Group 2: 30 students, 10 play, 20 not play
+        ID to play: 62 63 70 76 78 79 80 83 85 87
+Group 3: 30 students, 13 play, 17 not play
+        ID to play: 121 124 125 130 132 133 134 135 136 141 143 145 146
+Group 4: 30 students, 10 play, 20 not play
+        ID to play: 151 158 161 163 166 168 171 172 177 178
+Group 5: 30 students, 5 play, 25 not play
+        ID to play: 183 187 188 191 194
+Group 6: 30 students, 10 play, 20 not play
+        ID to play: 210 214 215 219 224 225 231 233 236 238
+Group 7: 15 students, 10 play, 5 not play
+        ID to play: 240 241 243 245 246 248 250 252 253 254
+Group 8: 30 students, 8 play, 22 not play
+        ID to play: 300 301 302 306 313 321 323 327
+Group 9: 15 students, 6 play, 9 not play
+        ID to play: 332 335 336 337 339 342
+Group 10: 15 students, 3 play, 12 not play
+        ID to play: 347 348 352
+Group 11: 30 students, 7 play, 23 not play
+        ID to play: 364 371 373 374 376 378 381
+Group 12: 30 students, 7 play, 23 not play
+        ID to play: 395 396 399 402 405 415 416
+Group 13: 30 students, 7 play, 23 not play
+        ID to play: 420 430 432 435 437 439 446
+Group 14: 30 students, 13 play, 17 not play
+        ID to play: 452 454 455 457 460 461 462 467 468 469 471 472 479
+Group 15: 30 students, 13 play, 17 not play
+        ID to play: 513 514 515 516 517 518 519 522 525 528 530 532 534
+Group 16: 30 students, 6 play, 24 not play
+        ID to play: 542 547 555 558 561 565
+
+-------------- Day: 27 | Weather: Raining and not Windy ---------------
+Group 0: 120 students, 35 play, 85 not play
+        ID to play: 0 2 5 6 7 14 21 23 24 27 28 29 101 102 103 104 111 112 572 573 575 578 580 584 586 587 591 592 598 272 279 281 282 283 289
+Group 1: 75 students, 23 play, 52 not play
+        ID to play: 30 34 37 48 49 51 53 54 57 59 256 260 261 480 487 488 489 492 493 497 499 501 502
+Group 2: 30 students, 8 play, 22 not play
+        ID to play: 62 65 69 70 76 78 82 83
+Group 3: 30 students, 11 play, 19 not play
+        ID to play: 120 124 125 126 130 132 134 136 143 146 147
+Group 4: 30 students, 10 play, 20 not play
+        ID to play: 151 157 163 166 168 170 171 172 173 178
+Group 5: 30 students, 5 play, 25 not play
+        ID to play: 184 187 195 205 208
+Group 6: 30 students, 7 play, 23 not play
+        ID to play: 210 215 218 225 231 235 238
+Group 7: 15 students, 4 play, 11 not play
+        ID to play: 246 248 252 253
+Group 8: 30 students, 11 play, 19 not play
+        ID to play: 300 301 303 304 307 313 318 319 320 321 322
+Group 9: 15 students, 2 play, 13 not play
+        ID to play: 332 342
+Group 10: 15 students, 3 play, 12 not play
+        ID to play: 347 351 357
+Group 11: 30 students, 13 play, 17 not play
+        ID to play: 360 362 363 364 365 372 373 374 376 378 381 385 388
+Group 12: 30 students, 10 play, 20 not play
+        ID to play: 395 397 399 401 405 409 410 412 415 416
+Group 13: 30 students, 5 play, 25 not play
+        ID to play: 420 426 435 442 446
+Group 14: 30 students, 10 play, 20 not play
+        ID to play: 451 452 454 457 458 460 461 462 471 472
+Group 15: 30 students, 9 play, 21 not play
+        ID to play: 514 516 517 522 523 525 530 532 536
+Group 16: 30 students, 9 play, 21 not play
+        ID to play: 551 554 555 557 558 560 563 565 567
+
+-------------- Day: 28 | Weather: Sunny and Humid ---------------
+--- 组 0 和组 9 被合并为组 0 ---
+当前组数: 16 容量: 40
+Group 0: 135 students, 6 play, 129 not play
+        ID to play: 27 95 584 592 285 343
+Group 1: 75 students, 2 play, 73 not play
+        ID to play: 269 500
+Group 2: 30 students, 0 play, 30 not play
+        ID to play:
+Group 3: 30 students, 1 play, 29 not play
+        ID to play: 123
+Group 4: 30 students, 1 play, 29 not play
+        ID to play: 152
+Group 5: 30 students, 1 play, 29 not play
+        ID to play: 207
+Group 6: 30 students, 3 play, 27 not play
+        ID to play: 219 230 234
+Group 7: 15 students, 0 play, 15 not play
+        ID to play:
+Group 8: 30 students, 1 play, 29 not play
+        ID to play: 315
+Group 9: 15 students, 0 play, 15 not play
+        ID to play:
+Group 10: 30 students, 3 play, 27 not play
+        ID to play: 361 367 387
+Group 11: 30 students, 1 play, 29 not play
+        ID to play: 419
+Group 12: 30 students, 0 play, 30 not play
+        ID to play:
+Group 13: 30 students, 3 play, 27 not play
+        ID to play: 454 459 478
+Group 14: 30 students, 0 play, 30 not play
+        ID to play:
+Group 15: 30 students, 1 play, 29 not play
+        ID to play: 546
+
+-------------- Day: 29 | Weather: Sunny and not Humid ---------------
+Group 0: 135 students, 12 play, 123 not play
+        ID to play: 1 5 20 22 119 575 279 293 296 297 331 337
+Group 1: 75 students, 8 play, 67 not play
+        ID to play: 49 50 56 58 258 264 269 481
+Group 2: 30 students, 1 play, 29 not play
+        ID to play: 73
+Group 3: 30 students, 1 play, 29 not play
+        ID to play: 149
+Group 4: 30 students, 2 play, 28 not play
+        ID to play: 175 179
+Group 5: 30 students, 1 play, 29 not play
+        ID to play: 196
+Group 6: 30 students, 2 play, 28 not play
+        ID to play: 228 233
+Group 7: 15 students, 0 play, 15 not play
+        ID to play:
+Group 8: 30 students, 1 play, 29 not play
+        ID to play: 320
+Group 9: 15 students, 0 play, 15 not play
+        ID to play:
+Group 10: 30 students, 2 play, 28 not play
+        ID to play: 363 371
+Group 11: 30 students, 1 play, 29 not play
+        ID to play: 403
+Group 12: 30 students, 3 play, 27 not play
+        ID to play: 426 434 439
+Group 13: 30 students, 4 play, 26 not play
+        ID to play: 463 466 469 478
+Group 14: 30 students, 2 play, 28 not play
+        ID to play: 521 533
+Group 15: 30 students, 2 play, 28 not play
+        ID to play: 561 562
+
+-------------- Day: 30 | Weather: Raining and not Windy ---------------
+--- 组 2 和组 10 被合并为组 2 ---
+当前组数: 15 容量: 40
+Group 0: 135 students, 43 play, 92 not play
+        ID to play: 0 2 3 7 14 23 24 25 94 96 97 102 103 111 112 113 114 117 118 119 573 575 580 582 584 585 586 589 591 598 272 273 280 283 285 287 289 292 331 332 337 340 342
+Group 1: 75 students, 21 play, 54 not play
+        ID to play: 33 37 42 48 51 53 54 57 59 256 260 261 262 265 268 490 499 501 502 505 509
+Group 2: 60 students, 15 play, 45 not play
+        ID to play: 62 65 67 70 75 76 81 89 360 372 373 374 376 378 381
+Group 3: 30 students, 13 play, 17 not play
+        ID to play: 121 124 126 127 130 132 133 134 136 137 141 146 147
+Group 4: 30 students, 10 play, 20 not play
+        ID to play: 151 157 158 161 163 168 171 173 177 178
+Group 5: 30 students, 7 play, 23 not play
+        ID to play: 182 185 187 188 200 205 208
+Group 6: 30 students, 7 play, 23 not play
+        ID to play: 210 212 215 218 225 231 238
+Group 7: 15 students, 5 play, 10 not play
+        ID to play: 245 246 248 252 253
+Group 8: 30 students, 11 play, 19 not play
+        ID to play: 306 308 309 313 315 318 319 321 322 327 328
+Group 9: 15 students, 5 play, 10 not play
+        ID to play: 348 350 351 352 357
+Group 10: 30 students, 8 play, 22 not play
+        ID to play: 395 399 402 405 412 415 416 417
+Group 11: 30 students, 8 play, 22 not play
+        ID to play: 420 425 426 430 433 435 437 446
+Group 12: 30 students, 12 play, 18 not play
+        ID to play: 452 454 456 457 460 461 462 466 468 469 471 472
+Group 13: 30 students, 9 play, 21 not play
+        ID to play: 516 517 518 520 522 523 525 530 532
+Group 14: 30 students, 7 play, 23 not play
+        ID to play: 542 547 554 559 563 565 567
+
+Student allocs: 810, frees: 210
+kjsatori@KJSatori:~/Homework/Project6$ cat err
+==678== Memcheck, a memory error detector
+==678== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==678== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==678== Command: ./proj6
+==678==
+==678== Invalid read of size 8
+==678==    at 0x10B3FA: Group::GetGroupID() const (Group.h:30)
+==678==    by 0x10B02F: World::TryMergeRandomGroup() (World.cpp:169)
+==678==    by 0x10AA15: World::DoSimulation() (World.cpp:79)
+==678==    by 0x10A4F2: main (main.cpp:24)
+==678==  Address 0x4defc10 is 48 bytes inside a block of size 64 free'd
+==678==    at 0x484BB6F: operator delete(void*, unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==678==    by 0x10AF05: World::TryMergeRandomGroup() (World.cpp:150)
+==678==    by 0x10AA15: World::DoSimulation() (World.cpp:79)
+==678==    by 0x10A4F2: main (main.cpp:24)
+==678==  Block was alloc'd at
+==678==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==678==    by 0x10A66B: World::World(unsigned long) (World.cpp:17)
+==678==    by 0x10A4E6: main (main.cpp:23)
+==678==
+==678==
+==678== HEAP SUMMARY:
+==678==     in use at exit: 0 bytes in 0 blocks
+==678==   total heap usage: 1,986 allocs, 1,986 frees, 124,016 bytes allocated
+==678==
+==678== All heap blocks were freed -- no leaks are possible
+==678==
+==678== For lists of detected and suppressed errors, rerun with: -s
+==678== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

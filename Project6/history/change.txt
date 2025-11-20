@@ -1,0 +1,19 @@
+StudentVector
+新分配槽全部初始化为 nullptr，避免未初始化指针被 delete。
+严格化 operator[]（不再隐式扩展 len，负索引安全处理）。
+实现并使用 ExtractRange 来搬移一段学生指针（避免深拷贝/双重释放）。
+完善拷贝构造 / 移动构造 / 赋值 / 析构，防止所有权混乱导致泄漏。
+Group
+构造函数接受右值 StudentVector&& 并使用 std::move，避免不必要拷贝。
+初始化 decisions 数组（全部设为 PlayType::NotPlay）。
+在 GroupDecision、Report、operator<< 中加入边界检查与空指针保护，防止越界读取。
+使用 ExtractRange 在 Split() 中安全转移学生所有权。
+World
+在 TryMergeRandomGroup() 中先保存要打印的组 ID，然后删除被合并组，避免在 delete 之后访问已释放对象（修复了 ASan/Valgrind 的 Invalid read）。
+调试与验证
+暂时加入 Student 的 alloc/frees 计数及在 main 打印，帮助验证析构是否匹配。
+多次运行 + valgrind / ASan 验证，现在没有内存泄漏与 Invalid read。
+
+
+移除或保留调试计数：
+Student::PrintAllocStats()，把计数器和 main 中的调用移除；或者保留用于回归检测。
