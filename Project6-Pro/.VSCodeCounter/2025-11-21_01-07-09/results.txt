@@ -1,0 +1,39 @@
+Date : 2025-11-21 01:07:09
+Directory : d:\Warehouse\Project\H-Homework\Project6
+Total : 15 files,  817 codes, 65 comments, 151 blanks, all 1033 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C++      |         15 |        817 |         65 |        151 |      1,033 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                       | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                          |         15 |        817 |         65 |        151 |      1,033 |
++------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                   | language | code       | comment    | blank      | total      |
++------------------------------------------------------------+----------+------------+------------+------------+------------+
+| d:\Warehouse\Project\H-Homework\Project6\Decision.cpp      | C++      |         41 |          0 |          2 |         43 |
+| d:\Warehouse\Project\H-Homework\Project6\Decision.h        | C++      |         19 |          0 |          8 |         27 |
+| d:\Warehouse\Project\H-Homework\Project6\Group.cpp         | C++      |        103 |         17 |         22 |        142 |
+| d:\Warehouse\Project\H-Homework\Project6\Group.h           | C++      |         30 |          0 |          6 |         36 |
+| d:\Warehouse\Project\H-Homework\Project6\Student.cpp       | C++      |         46 |          0 |          9 |         55 |
+| d:\Warehouse\Project\H-Homework\Project6\Student.h         | C++      |         23 |          3 |          6 |         32 |
+| d:\Warehouse\Project\H-Homework\Project6\StudentVector.cpp | C++      |        171 |         14 |         29 |        214 |
+| d:\Warehouse\Project\H-Homework\Project6\StudentVector.h   | C++      |         33 |          1 |          9 |         43 |
+| d:\Warehouse\Project\H-Homework\Project6\Utils.cpp         | C++      |          5 |          0 |          2 |          7 |
+| d:\Warehouse\Project\H-Homework\Project6\Utils.h           | C++      |          9 |          0 |          4 |         13 |
+| d:\Warehouse\Project\H-Homework\Project6\Weather.cpp       | C++      |         72 |          7 |          9 |         88 |
+| d:\Warehouse\Project\H-Homework\Project6\Weather.h         | C++      |         30 |          1 |          6 |         37 |
+| d:\Warehouse\Project\H-Homework\Project6\World.cpp         | C++      |        193 |         11 |         27 |        231 |
+| d:\Warehouse\Project\H-Homework\Project6\World.h           | C++      |         26 |          0 |          5 |         31 |
+| d:\Warehouse\Project\H-Homework\Project6\main.cpp          | C++      |         16 |         11 |          7 |         34 |
+| Total                                                      |          |        817 |         65 |        151 |      1,033 |
++------------------------------------------------------------+----------+------------+------------+------------+------------+
