@@ -1,0 +1,26 @@
+CC = g++
+CCFLAGS = -g 
+CCLIBS = -lncurses
+mygame: main.o Gui.o Game.o Item.o Pizza.o Noodle.o
+	$(CC) $(CCFLAGS)  $(CCLIBS) -o mygame main.o Gui.o Game.o Item.o Pizza.o Noodle.o
+
+Gui.o: Gui.h Gui.C
+	$(CC) $(CCFLAGS) -c -o Gui.o Gui.C
+
+Game.o: Game.h Game.C
+	$(CC) $(CCFLAGS) -c -o Game.o Game.C
+
+main.o: main.C
+	$(CC) $(CCFLAGS) -c -o main.o main.C
+
+Item.o: Item.C Item.h
+	$(CC) $(CCFLAGS) -c -o Item.o Item.C
+
+Noodle.o: Noodle.h Noodle.C
+	$(CC) $(CCFLAGS) -c -o Noodle.o Noodle.C
+
+Pizza.o: Pizza.h Pizza.C
+	$(CC) $(CCFLAGS) -c -o Pizza.o Pizza.C
+
+clean:
+	rm -rf mygame *.o
