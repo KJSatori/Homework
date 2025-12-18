@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "D:/msys64/mingw64/include/ncurses",
+                "D:/msys64/mingw64/include",
+                "D:/msys64/mingw64/include/c++/15.2.0",
+                "D:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32"
+            ],
+            "compilerPath": "D://msys64//mingw64//bin//g++.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64"
+        }
+    ],
+    "version": 4
+}

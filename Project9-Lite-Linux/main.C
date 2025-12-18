@@ -22,7 +22,7 @@ int main()
         gettimeofday(&time_now, NULL);
         currentTime = (time_now.tv_sec * 1000) + (time_now.tv_usec / 1000);
 
-        if (currentTime - oldTime < 67) 
+        if (currentTime - oldTime < 60) 
         {
             usleep(1000);
             continue;

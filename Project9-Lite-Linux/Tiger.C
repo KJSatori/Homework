@@ -2,12 +2,12 @@
 
 void Tiger::Initialize()
 {
-    fixedLife = 18;
+    fixedLife = 7;
     lifecycle = fixedLife;
     symbols[0] = 'T';
     label = "Tiger";
     type = AnimalType::Tiger;
-    colorPair = 4;
+    // colorPair = 4;
 }
 
 void Tiger::Update(Vector2Int targetPos)

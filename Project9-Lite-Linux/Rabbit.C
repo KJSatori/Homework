@@ -7,7 +7,7 @@ void Rabbit::Initialize()
     symbols[0] = 'R';
     label = "Rabbit";
     type = AnimalType::Rabbit;
-    colorPair = 2;
+    // colorPair = 2;
 }
 
 void Rabbit::Update(Vector2Int targetPos)

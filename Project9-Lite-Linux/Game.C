@@ -21,7 +21,7 @@ bool Game::IsPosTakenUpByAnimal(const Vector2Int &pos) const
 
 bool Game::IsPosInBorder(const Vector2Int &pos) const
 {
-    return pos.row >= 4 && pos.row <= 23 && pos.col >=1 && pos.col <= 78;
+    return pos.row >= 0 && pos.row <= 24 && pos.col >=0 && pos.col <= 79;
 }
 
 template<typename Func>
@@ -35,8 +35,8 @@ vector<Vector2Int> Game::FliteredMoves(const vector<Vector2Int> originalMoves, F
 vector<Vector2Int> Game::GetValidGrassPos() const
 {
     vector<Vector2Int> output;
-    for (int c = 1; c <= 78; c++)
-        for (int r = 4; r <= 23; r++)
+    for (int c = 0; c <= 79; c++)
+        for (int r = 0; r <= 24; r++)
         {
             Vector2Int pos = Vector2Int(r, c);
             if (grasses.find(pos) == grasses.end()) output.push_back(pos);
@@ -47,8 +47,8 @@ vector<Vector2Int> Game::GetValidGrassPos() const
 vector<Vector2Int> Game::GetValidAnimalPos() const
 {
     vector<Vector2Int> output;
-    for (int c = 1; c <= 78; c++)
-        for (int r = 4; r <= 23; r++)
+    for (int c = 0; c <= 79; c++)
+        for (int r = 0; r <= 24; r++)
         {
             Vector2Int pos = Vector2Int(r, c);
             // pos 没有动物，说明这里可以生成动物
@@ -61,13 +61,13 @@ Game::Game()
 {
     gui.Init();
 
-    for (int c = 1; c <= 78; c++)
-        for (int r = 4; r <= 23; r++)
+    for (int c = 0; c <= 79; c++)
+        for (int r = 0; r <= 24; r++)
             grasses.insert({Vector2Int(r, c), make_shared<Grass>(r, c)});
 
     count = 0;
 
-    debugString = "Author: KJSatori - SUAT25000247;\tPress 'A' to generate a Rabbit; \nPress 'S' to generate a Wolf;\t\tPress 'D' to generate a Tiger; ";
+    // debugString = "Author: KJSatori - SUAT25000247;\tPress 'A' to generate a Rabbit; \nPress 'S' to generate a Wolf;\t\tPress 'D' to generate a Tiger; ";
 }
 
 void Game::Update() {
@@ -83,9 +83,9 @@ void Game::Update() {
         count = 0;
         day++;
 
-        UpdateDebug();
+        //UpdateDebug();
         UpdateItems(c);
-        UpdateUI();
+        //UpdateUI();
         
         // 将缓存刷入屏幕
         gui.RefreshWindow();
@@ -142,13 +142,13 @@ void Game::UpdateItems(int c) {
         pos = GenerateRandomPos(GetValidAnimalPos());
         if (pos != Vector2Int(0, 0)) animals.insert({pos, make_shared<Rabbit>(pos.row, pos.col)});
         break;
-    case 's':
-        pos = GenerateRandomPos(GetValidAnimalPos());
-        if (pos != Vector2Int(0, 0)) animals.insert({pos, make_shared<Wolf>(pos.row, pos.col)});
-        break;
     case 'd':
         pos = GenerateRandomPos(GetValidAnimalPos());
-        if (pos != Vector2Int(0, 0)) animals.insert({pos, make_shared<Tiger>(pos.row, pos.col)});
+        if (rand() % 2 == 1)
+        {
+            if (pos != Vector2Int(0, 0)) animals.insert({pos, make_shared<Wolf>(pos.row, pos.col)});
+        }
+        else if (pos != Vector2Int(0, 0)) animals.insert({pos, make_shared<Tiger>(pos.row, pos.col)});
         break;
     }
 

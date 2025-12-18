@@ -1,38 +1,38 @@
-#include "Wolf.h"
+#include "Tiger.h"
 
-void Wolf::Initialize()
+void Tiger::Initialize()
 {
-    fixedLife = 10;
+    fixedLife = 7;
     lifecycle = fixedLife;
-    symbols[0] = 'W';
-    label = "Wolf";
-    type = AnimalType::Wolf;
-    colorPair = 3;
+    symbols[0] = 'T';
+    label = "Tiger";
+    type = AnimalType::Tiger;
+    // colorPair = 4;
 }
 
-void Wolf::Update(Vector2Int targetPos)
+void Tiger::Update(Vector2Int targetPos)
 {
     if (targetPos != Vector2Int(0, 0)) MoveTo(targetPos);
     // 减少生命周期
     lifecycle--;
 }
 
-void Wolf::Eat()
+void Tiger::Eat()
 {
     lifecycle = fixedLife;
 }
 
-vector<Vector2Int> Wolf::PossibleMoves()
+vector<Vector2Int> Tiger::PossibleMoves()
 {
     vector<Vector2Int> possiblePoses = vector<Vector2Int>();
-    for (int i = 1; i <= 24; i++)
+    for (int i = 1; i <= 48; i++)
     {
         possiblePoses.push_back(pos + GenerateDirectionPosByDirection(i));
     }
     return possiblePoses;
 }
 
-vector<Vector2Int> Wolf::PossibleMoves(unordered_map<Vector2Int, shared_ptr<Animal>, Vector2IntHash> animals)
+vector<Vector2Int> Tiger::PossibleMoves(unordered_map<Vector2Int, shared_ptr<Animal>, Vector2IntHash> animals)
 {
     vector<Vector2Int> possiblePoses = vector<Vector2Int>();
     bool hasFood = false;
@@ -40,9 +40,9 @@ vector<Vector2Int> Wolf::PossibleMoves(unordered_map<Vector2Int, shared_ptr<Anim
     for (auto& [key, value]: animals)
     {
         auto animal = value;
-        if (IsPosInSelfborder(animal->GetPos(), 2))
+        if (IsPosInSelfborder(animal->GetPos(), 3))
         {
-            if (animal->GetType() == AnimalType::Rabbit)
+            if (animal->GetType() == AnimalType::Rabbit || animal->GetType() == AnimalType::Wolf)
             {
                 hasFood = true;
                 possiblePoses.push_back(animal->GetPos());
@@ -50,17 +50,11 @@ vector<Vector2Int> Wolf::PossibleMoves(unordered_map<Vector2Int, shared_ptr<Anim
         }
     }
 
-    if (!hasFood)
-    {
-        for (int i = 1; i <=24; i++)
-        {
-            possiblePoses.push_back(pos + GenerateDirectionPosByDirection(i));
-        }
-    }
+    if (!hasFood) for (int i = 1; i <= 48; i++) possiblePoses.push_back(pos + GenerateDirectionPosByDirection(i));
     return possiblePoses;
 }
 
-void Wolf::MoveTo(Vector2Int targetPos)
+void Tiger::MoveTo(Vector2Int targetPos)
 {
     pos = targetPos;
 }
