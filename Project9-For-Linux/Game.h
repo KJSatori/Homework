@@ -22,6 +22,8 @@ private:
     size_t day = 0;
 
     string debugString = "";
+
+    bool isGameEnd = false;
     
     bool IsPosValid (const Vector2Int& pos) const;
     bool IsPosTakenUpByAnimal (const Vector2Int& pos) const;
@@ -44,6 +46,7 @@ public:
     void UpdateItems(int c);
     void PlaceItem(const Item& item, bool isBold = false);
     Vector2Int GenerateRandomPos(vector<Vector2Int> validPos);
+    bool IsGameEnd() { return isGameEnd; }
 };
 
 #endif

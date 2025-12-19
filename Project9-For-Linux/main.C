@@ -29,6 +29,7 @@ int main()
         }
 
         game.Update();
+        if (game.IsGameEnd()) break;
 
         oldTime = currentTime;
     }

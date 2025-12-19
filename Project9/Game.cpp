@@ -127,6 +127,7 @@ void Game::UpdateUI()
     ShowMessageAt(24, 0, marginLabel);
     ShowMessageAt(25, 0, "My wolves and tigers are particularly resistant to hunger.");
     ShowMessageAt(26, 0, "This helps prevent the game from being reviewed by animal rights organizations.");
+    ShowMessageAt(27, 0, "Press 'q' to quit.");
 }
 
 void Game::UpdateItems(int c) {
@@ -150,6 +151,8 @@ void Game::UpdateItems(int c) {
         pos = GenerateRandomPos(GetValidAnimalPos());
         if (pos != Vector2Int(0, 0)) animals.insert({pos, make_shared<Tiger>(pos.row, pos.col)});
         break;
+    case 'q':
+        isGameEnd = true;
     }
 
     for (auto& [key, value]: grasses)
