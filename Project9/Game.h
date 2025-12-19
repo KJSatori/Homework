@@ -47,6 +47,7 @@ public:
     void PlaceItem(const Item& item, bool isBold = false);
     Vector2Int GenerateRandomPos(vector<Vector2Int> validPos);
     bool IsGameEnd() { return isGameEnd; }
+    void InitAnimals(int tigers, int wolves, int rabbits); // 新增
 };
 
 #endif

@@ -10,6 +10,7 @@ void Grass::Initialize()
     label = "Grass";
     type = AnimalType::Grass;
     colorPair = 1;
+    state = 3;
 }
 
 void Grass::Update(Vector2Int targetpos)

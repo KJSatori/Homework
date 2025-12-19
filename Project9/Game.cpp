@@ -8,6 +8,8 @@
 #include "Rabbit.h"
 #include "Wolf.h"
 #include "Tiger.h"
+#include <random>
+#include <algorithm>
 
 bool Game::IsPosValid(const Vector2Int &pos) const
 {
@@ -308,4 +310,34 @@ void Game::PlaceTokenAt(size_t row, size_t col, char token, int colorPair, bool 
 /// @brief 在对应地方显示一串消息
 void Game::ShowMessageAt(size_t row, size_t col, string message) {
     gui.DrawTextAt(row, col, message.c_str());
+}
+
+void Game::InitAnimals(int tigers, int wolves, int rabbits)
+{
+    if (tigers < 0) tigers = 0;
+    if (wolves < 0) wolves = 0;
+    if (rabbits < 0) rabbits = 0;
+
+    vector<Vector2Int> avail = GetValidAnimalPos();
+
+    if (avail.empty()) return;
+    random_device rd;
+    mt19937 g(rd());
+    shuffle(avail.begin(), avail.end(), g);
+    auto placeOne = [&](function<shared_ptr<Animal>(int,int)> maker) -> bool {
+        if (avail.empty()) return false;
+        Vector2Int p = avail.back();
+        avail.pop_back();
+        animals.insert({p, maker(p.row, p.col)});
+        return true;
+    };
+    for (int i = 0; i < tigers; ++i) {
+        if (!placeOne([](int r, int c)->shared_ptr<Animal> { return make_shared<Tiger>(r, c); })) break;
+    }
+    for (int i = 0; i < wolves; ++i) {
+        if (!placeOne([](int r, int c)->shared_ptr<Animal> { return make_shared<Wolf>(r, c); })) break;
+    }
+    for (int i = 0; i < rabbits; ++i) {
+        if (!placeOne([](int r, int c)->shared_ptr<Animal> { return make_shared<Rabbit>(r, c); })) break;
+    }
 }
