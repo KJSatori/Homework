@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run ncursesw game",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.exe",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "MIMode": "gdb",
+      "miDebuggerPath": "D:/msys64/mingw64/bin/gdb.exe",
+      "externalConsole": true,
+      "preLaunchTask": "build main.cpp"
+    }
+  ]
+}
