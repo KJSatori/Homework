@@ -1,0 +1,8 @@
+"filename", "language", "JSON", "C++", "comment", "blank", "total"
+"/home/kjsatori/Project10-BlueAlert/Engine/Core/Component/SinePattern.h", "C++", 0, 0, -1, 0, -1
+"/home/kjsatori/Project10-BlueAlert/Game/Prefabs/RegisterPrefabs.h", "C++", 0, 1, 0, 0, 1
+"/home/kjsatori/Project10-BlueAlert/Game/Scripts/BulletEffect.h", "C++", 0, 3, 1, 2, 6
+"/home/kjsatori/Project10-BlueAlert/Game/Scripts/Player.h", "C++", 0, 8, 1, 1, 10
+"/home/kjsatori/Project10-BlueAlert/TestStage.json", "JSON", 30, 0, 0, 1, 31
+"/home/kjsatori/Project10-BlueAlert/main.cpp", "C++", 0, 29, 0, 6, 35
+"Total", "-", 30, 41, 1, 10, 82

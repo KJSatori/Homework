@@ -8,7 +8,12 @@ struct Circle;
 
 struct Shape
 {
-    virtual void SetCenter(const Vector2& c) = 0;
+protected:
+    Vector2 center;
+
+public:
+    virtual void SetCenter(const Vector2& c) { center = c; };
+    virtual Vector2 GetCenter() const { return center; }
     virtual bool Contains(const Vector2& point) const = 0;
     virtual bool Intersects(const Shape& other) const = 0;
     virtual bool IntersectsWithRectangle(const Rectangle& rect) const = 0;

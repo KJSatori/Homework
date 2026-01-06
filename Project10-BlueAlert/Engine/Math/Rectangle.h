@@ -5,11 +5,10 @@
 #include "Vector2.h"
 
 struct Rectangle : public Shape {
-    Vector2 center;
     float width, height;
 
     Rectangle(const Vector2& c, float w, float h)
-        : center(c), width(w), height(h) {}
+        : width(w), height(h) { center = c; }
 
     Rectangle(const Vector2& tl, const Vector2& br) {
         center = Vector2((tl.x + br.x) / 2, (tl.y + br.y) / 2);
@@ -24,8 +23,6 @@ struct Rectangle : public Shape {
     Vector2 GetBottomRight() const {
         return Vector2(center.x + width / 2, center.y + height / 2);
     }
-
-    void SetCenter(const Vector2& c) override { center = c; }
 
     bool Contains(const Vector2& point) const override {
         return point.x >= GetTopLeft().x && point.x <= GetBottomRight().x &&

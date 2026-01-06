@@ -2,6 +2,8 @@
 #define VECTOR2_H
 
 #include <cmath>
+#include <string>
+#include <sstream>
 
 struct Vector2
 {
@@ -37,6 +39,11 @@ public:
     Vector2 operator-(const Vector2& other) const
     {
         return Vector2(x - other.x, y - other.y);
+    }
+
+    Vector2 operator-() const
+    {
+        return Vector2(-x, -y);
     }
 
     Vector2 operator*(float scalar) const
@@ -94,12 +101,22 @@ public:
         return (fabs(x - other.x) < epsilon) && (fabs(y - other.y) < epsilon);
     }
 
+    operator std::string() const
+    {
+        std::ostringstream ss;
+        ss << "(" << x << "," << y << ")";
+        return ss.str();
+    }
+
     static Vector2 Zero() { return Vector2(0, 0); }
     static Vector2 One() { return Vector2(1, 1); }
-    static Vector2 Up() { return Vector2(0, -1); }      // 在屏幕坐标系中，y轴向下为正
+    static Vector2 Up() { return Vector2(0, 1); }      
     static Vector2 Right() { return Vector2(1, 0); }
-    static Vector2 Down() { return Vector2(0, 1); }     
+    static Vector2 Down() { return Vector2(0, -1); }     
     static Vector2 Left() { return Vector2(-1, 0); }
 };
+
+// 简单AABB结构
+struct AABB { Vector2 min; Vector2 max; };
 
 #endif

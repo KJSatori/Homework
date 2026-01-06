@@ -6,16 +6,12 @@
 
 struct Circle : public Shape
 {
-    Vector2 center;
     float radius;
 
     Circle(const Vector2& c, float r)
-        : center(c), radius(r) {}
-
-    Vector2 GetCenter() const { return center; }
+        : radius(r) { center = c; }
+        
     float GetRadius() const { return radius; }
-
-    void SetCenter(const Vector2& c) override { center = c; }
 
     bool Contains(const Vector2& point) const override
     {

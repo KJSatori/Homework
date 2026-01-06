@@ -1,0 +1,25 @@
+\\wsl.localhost\Ubuntu-22.04\home\kjsatori\Project10-BlueAlert
+├── main.cpp
+├── Makefile
+├── Engine/
+│   ├── Utils/
+│   │   └── CharWidth.h
+│   ├── Render/
+│   │   ├── NcursesRenderer.h
+│   │   ├── Renderer.h
+│   │   └── TerminalMapper.h
+│   ├── Math/
+│   │   ├── Circle.cpp
+│   │   ├── Matrix.h
+│   │   ├── Rectangle.cpp
+│   │   ├── Rectangle.h
+│   │   ├── Shape.h
+│   │   ├── Transform.h
+│   │   ├── Vector2.h
+│   │   └── Circle.h
+│   └── Core/
+│       ├── Component/
+│       ├── GameObject/
+│       └── Scene/
+└── Game/
+    └── Scripts/

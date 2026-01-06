@@ -36,6 +36,5 @@ struct Rigidbody : public Component
     }
 };
 
-
 #endif
 

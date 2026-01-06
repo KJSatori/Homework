@@ -1,0 +1,30 @@
+CXX := g++
+CXXFLAGS := -std=c++17 -I./ $(shell pkg-config --cflags sdl2 SDL2_image SDL2_ttf)
+LDFLAGS  := $(shell pkg-config --libs sdl2 SDL2_image SDL2_ttf)
+
+TARGET := BlueAlert
+SRC_DIR := .
+BUILD_DIR := build
+
+SRCS := $(shell find $(SRC_DIR) -name "*.cpp")
+OBJS := $(patsubst %.cpp, $(BUILD_DIR)/%.o, $(SRCS))
+DEPS := $(OBJS:.o=.d)
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CXX) $(OBJS) -o $(TARGET) $(LDFLAGS)
+
+$(BUILD_DIR)/%.o: %.cpp
+	@mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+run: $(TARGET)
+	./$(TARGET)
+
+clean:
+	rm -rf $(BUILD_DIR) $(TARGET)
+
+-include $(DEPS)
+
+.PHONY: all run clean

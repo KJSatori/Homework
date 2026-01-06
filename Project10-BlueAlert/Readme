@@ -1,0 +1,153 @@
+↑ ↓ ← → 键 移动
+按住 Z 键 射击
+按住 Shift 键 缓速
+按下 X 键 雷
+
+启动时可以指定 json 文件以生成关卡
+若不指定 json 文件 则 生成随机关卡
+!!! 警告 !!! 随机关卡非常抽象且困难
+
+--- 功能简介 ---
+这是一个海战  (发生在海面上的空战)
+可以通过自己编写json文件来生成关卡
+如果启动的时候没有json文件则随机生成关卡 (真的很随机)
+按下 Z 键持续射击
+按下 X 键是 雷（清屏并获得3s无敌时间）
+按下 Shift 减速
+被弹时从下方复活并获取3s无敌时间
+拾取敌人掉落的P点可提升火力
+火力达到 1 2 3 4都会升级
+每个敌人有2.5%概率掉落额外的B和0.5%掉落额外残机
+
+--- 特别说明 ---
+此游戏自机的血量是 2 最高为 8, 敌机和敌弹伤害恒为 1
+而不是 PPT 要求的 1000 以及不同的子弹有不同的伤害
+因为传统STG游戏都是这样的, 我不希望改变这一点
+况且编程而言这并不难, 只需要改变子弹的 damage 即可，然后将
+Player.h 里的 OnColliderEnter 的 health-- 改为 health-=damage
+
+由于使用了 SDL2 所以自机的移动是摁住即可, 不用一直摁
+
+鱼雷 和 导弹 我给改成了 Bomb 效果是 清屏+无敌, 没有做特效, 因为我懒得做了
+
+子弹我给改成了无穷的, 不然子弹打空了场上又没有子弹包不是爆炸了吗
+
+关于敌人:
+我没有实现PPT里要求的    Bomber: 从右飞到左或者从左飞到右 之类的
+取而代之的是两类敌人 BezierSniper 和 BezierFixer
+前者发射的子弹会瞄准Player攻击
+后者发射的子弹沿贝塞尔曲线移动
+二者都沿贝塞尔曲线移动
+
+显然这两者可以构造的敌人种类明显多于PPT里要求的, 我觉得可以当作实现了
+
+关于岛屿, 这个我没有实现. 同样是因为不喜欢岛屿, 这种纯粹干扰游戏体验的东西.
+但是为了得到加载岛屿的附加分, 我改成了加载关卡 详见 Stage1.json
+玩家可以通过编辑 json 文件来加载关卡
+
+PPT 里要求的 MedicalPack 就是敌人(极小概率)掉落的残机 和 小概率掉落的雷
+玩久一点就可以看到
+
+关于收集物品, 当玩家位于物品周围或者屏幕上方都可以收集物品
+
+总之就是这样, 我不得不承认这个与作业的要求大相径庭! 
+但是我为了这个小游戏写了 4458 行代码, 在上面投入了 49.5h 的时间
+看着给点分吧（
+
+Made by KJSatori
+2026.1.6
+
+--- 附录: 关于json ---
+顶层结构
+waves：数组，每个元素表示一波（Wave）。
+startTime：浮点数，波开始的全局时间（秒）。默认 0.0。
+
+示例:
+{
+  "waves": [
+    { "startTime": 0.0, "spawns": [ /* spawn 列表 */ ] }
+  ]
+}
+
+Spawn 条目字段（每个波内的单个生成项）
+每个 spawn 对象控制一组敌机的生成与其行为：
+prefabKey (必需)：字符串，预制体键名，例如 "enemyBezierSniper" 或 "enemyBezierFixer"。
+position (必需)：数组 [x, y]，生成点的逻辑坐标（相对于场景坐标系，单位与游戏逻辑一致）。
+spawnTime：浮点数，相对于该波 startTime 的偏移（秒）。默认 0.0。
+count：整数，生成的实例数量。默认 1。
+interval：浮点数，同一 spawn 内多次生成的间隔（秒）。默认 1.0。
+bezier：数组，贝塞尔控制点列表（每个点为 [x,y]）。用于敌机移动轨迹，控制点为相对位移（相对于 position）。常见为 2~4 个点（起点通常 [0,0]）。
+bulletConfigs：数组，子弹配置列表（详见下文）。若为空或缺失，敌机可不发射子弹。
+params：对象，敌机行为参数（详见下文）。
+
+子弹配置 bulletConfigs 字段说明
+每个子弹配置对象控制一次发射中某类子弹的属性：
+常用字段（均可选，未提供时使用合理默认）：
+scale：子弹视觉/碰撞缩放因子（float）。示例 2.0。
+speed：子弹速度（单位与游戏逻辑一致，float）。示例 100.0。
+life：子弹存活时间（秒，float）。示例 3.0。
+dir：方向数组 [x,y]，用于线性子弹的初始方向；贝塞尔子弹通常忽略此字段。
+spawnOffset：数组 [x,y]，子弹生成位置相对于敌机生成点的偏移。
+bulletBezier：数组，子弹的贝塞尔控制点列表（每个点 [x,y]），用于贝塞尔轨迹子弹；控制点为相对位移，相对于子弹 spawnWorld（即敌机生成点 + spawnOffset）。
+bulletDuration：float，子弹沿贝塞尔曲线运动的持续时间（秒）。
+
+缓动相关字段（控制子弹沿曲线的时间映射）：
+bulletApplyEasing：bool，是否对子弹运动应用缓动映射。
+bulleEasingTime：float（注意字段名拼写需与 loader 一致），缓动时间参数。
+bulletEasingSlope：float，缓动曲线斜率/形状参数。
+bulletApplyEasingStop：bool，是否在缓动中包含停顿段。
+bulletStopDuration：float，停顿时长（秒）。
+
+示例子弹配置:
+{
+  "scale": 2.0,
+  "speed": 100.0,
+  "life": 3.0,
+  "dir": [1, 0],
+  "spawnOffset": [-6.0, -5.0],
+  "bulletBezier": [[0,0], [-250,-250], [-610,-300]],
+  "bulletDuration": 3.0,
+  "bulletApplyEasing": true,
+  "bulleEasingTime": 2.0,
+  "bulletEasingSlope": 0.3333,
+  "bulletApplyEasingStop": false,
+  "bulletStopDuration": 3
+}
+
+敌机参数 params 字段说明
+params 控制敌机的生命、射击时机、射击间隔、移动持续时间与缓动设置：
+字段：
+health：整数，敌机生命值。
+startShooting：float，生成后开始射击的时间（秒）。
+endShooting：float，停止射击的时间（秒）。
+fireInterval：float，射击间隔（秒）。
+duration：float，敌机移动（贝塞尔）总时长（秒）。
+
+缓动相关字段（与子弹类似）：
+applyEasing：bool，是否对敌机移动应用缓动映射。
+easingTime：float，缓动时间参数。
+easingSlope：float，缓动曲线形状参数。
+applyEasingStop：bool，是否包含停顿段。
+stopDuration：float，停顿时长（秒）。
+
+示例:
+"params": {
+  "health": 8,
+  "startShooting": 2.0,
+  "endShooting": 5.0,
+  "fireInterval": 0.33,
+  "duration": 8.0,
+  "applyEasing": true,
+  "easingTime": 2.0,
+  "easingSlope": 0,
+  "applyEasingStop": true,
+  "stopDuration": 3
+}
+
+坐标与控制点约定
+坐标系：position 与控制点均使用游戏逻辑坐标系，y 向上为正，左下角为原点。   
+逻辑坐标采用 800*600 游戏视口左下角为 (40, 20) 右上角为 (520, 575)， 推荐在 (0, 0) 至 (560, 600) 且不在视口范围内的地方生成与摧毁敌机
+控制点为相对位移：bezier 与 bulletBezier 中的点是相对位移，最终轨迹点 = spawn position + 控制点。通常第一个点为 [0,0]（起点）。
+贝塞尔曲线长度与 duration：duration / bulletDuration 决定沿曲线的时间尺度，缓动函数会把线性时间映射到曲线参数上。
+
+推荐参考Stage1.json生成

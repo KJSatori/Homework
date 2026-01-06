@@ -6,69 +6,46 @@
 #include <vector>
 #include "Component.h"
 
-#include <ncursesw/ncurses.h>
-
-using namespace std;
+#include <iostream>
 
 struct Debug : public Component
 {
     // 单例
     static Debug* instance;
-    WINDOW* win;
-    vector<string> messages;
-    int maxLines;
+    std::vector<std::string> messages;
+    int maxLines = 10;
 
-    Debug(GameObject* owner = nullptr) : Component(owner), win(nullptr), maxLines(0) {}
+    Debug(GameObject* owner = nullptr) : Component(owner) { }
+    ~Debug() override;
 
     void Awake() override 
     {
-        if (!instance) instance = this;
+        if (instance == nullptr) instance = this;
     }
 
-    void Start() override
-    {
-        Init();
-    }
-
-    void Init(int height = 5, int width = COLS, int starty = LINES-5, int startx = 0)
-    {
-        win = newwin(height, width, starty, startx);
-        scrollok(win, TRUE);    // 允许窗口滚动
-        maxLines = height;
-    }
+    void Start() override { }
 
     void Render(Renderer& renderer) override
     {
-        // 每帧刷新窗口
-        werase(win);
-        for (size_t i = 0; i < messages.size(); ++i)
-        {
-            mvwprintw(win, i, 0, "%s", messages[i].c_str());
-        }
-        wrefresh(win);
-    }
-
-    static void Log(const Vector2& pos, const std::string& msg)
-    {
-        mvprintw(pos.y, pos.x, "%s", msg.c_str());
-        clrtoeol();
-        refresh();
+        // for (auto &m : messages)
+        // {
+        //     std::cout << m << std::endl;
+        //}
     }
 
     static void Log(const std::string& msg)
     {
-        if (!instance) return;
+        if (!instance) 
+        { 
+            std::cout << msg << std::endl; 
+            return;
+        }
+        std::cout << msg << std::endl; 
         instance->messages.push_back(msg);
-        if ((int)instance->messages.size() > instance->maxLines)
+        if ((int)instance->messages.size() > instance->maxLines) 
         {
             instance->messages.erase(instance->messages.begin());
         }
-    }
-
-    void Destroy() override
-    {
-        if (win) delwin(win);
-        win = nullptr;
     }
 };
 

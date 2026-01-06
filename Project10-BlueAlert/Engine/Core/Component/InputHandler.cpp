@@ -1,70 +1,94 @@
 #include "InputHandler.h"
 #include "Debug.h"
 
-#ifndef _WIN32
-#include <termkey.h>
-
-static TermKey* tk = nullptr;
-
 void InputHandler::Update(float deltaTime)
 {
-    if (!tk) tk = termkey_new(0, TERMKEY_FLAG_SPACESYMBOL);
-    TermKeyKey key;
-    while (termkey_getkey_force(tk, &key) == TERMKEY_RES_KEY)
+    // 本帧按键状态
+    unordered_map<int, bool> currStates = prevStates;
+
+    SDL_Event e;
+    while (SDL_PollEvent(&e))
     {
-        int code = key.code.codepoint;
-        bool isDown = (key.type == TERMKEY_TYPE_KEY);
-        auto it = keyBindings.find(code);
-        if (it != keyBindings.end())
+        switch (e.type)
         {
-            it->second(isDown);
+        case SDL_QUIT:
+            Debug::Log("SDL_QUIT received");
+            break;
+        
+        case SDL_KEYDOWN:
+        {
+            if (e.key.repeat) break;
+            int code = e.key.keysym.sym;
+            currStates[code] = true;
+
+            auto it = keyBindings.find(code);
+            bool wasDown = prevStates[code];
+
+            if (it != keyBindings.end() && !wasDown)
+            {
+                it->second.onDown();
+            }
+            break;
         }
+        case SDL_KEYUP:
+        {
+            int code = e.key.keysym.sym;
+            currStates[code] = false;
+
+            auto it = keyBindings.find(code);
+            bool wasDown = prevStates[code];
+            if (it != keyBindings.end() && wasDown)
+            {
+                it->second.onUp();
+            }
+            break;
+        }
+        default:
+            break;
+        }
+    }
+    prevStates = currStates;
+}
+
+void InputHandler::ProcessEvent(const SDL_Event &e)
+{
+    // Debug::Log("分发了事件: " + to_string(e.type));
+    switch (e.type)
+    {
+    case SDL_KEYDOWN:
+        if (e.key.repeat) break;
+        {
+            int code = e.key.keysym.sym;
+            bool wasDown = prevStates[code];
+            prevStates[code] = true;
+
+            auto it = keyBindings.find(code);
+            if (it != keyBindings.end() && !wasDown)
+            {
+                it->second.onDown();
+            }
+        }
+        break;
+    case SDL_KEYUP:
+        {
+            int code = e.key.keysym.sym;
+            bool wasDown = prevStates[code];
+            prevStates[code] = false;
+
+            auto it = keyBindings.find(code);
+            if (it != keyBindings.end() && wasDown)
+            {
+                it->second.onUp();
+            }
+        }
+        break;
+    default:
+        break;
     }
 }
 
-bool InputHandler::IsKeyDown(int key) const
-{
-    // libtermkey 没有 IsKeyDown，稍后自己维护状态表
-    return false;
+bool InputHandler::IsKeyDown(int key) const 
+{ 
+    auto it = prevStates.find(key);
+    return it != prevStates.end() && it->second; 
 }
-
-#endif
-
-#ifdef _WIN32
-    #define WIN32_LEAN_AND_MEAN
-    #define byte win_byte_override
-    #include <windows.h>
-    #undef byte
-
-void InputHandler::Update(float deltaTime)
-{
-    for (auto& kv : keyBindings)
-    {
-        int vk = kv.first;  // Windows虚拟键码
-        SHORT state = GetAsyncKeyState(vk);
-        bool isDown = (state & 0x8000) != 0;
-
-        bool wasDown = prevStates[vk];
-        if (!wasDown && isDown)
-        {
-            // Debug::Log("Key pressed: " + std::to_string(vk));
-        }
-
-        if (wasDown && !isDown)
-        {
-            // Debug::Log("Key released: " + std::to_string(vk));
-        }
-
-        // ! 注意，这里不管按下与否，都会执行！
-        kv.second(isDown);
-
-        prevStates[vk] = isDown;
-    }
-}
-
-bool InputHandler::IsKeyDown(int key) const
-{
-    return (GetAsyncKeyState(key) & 0x8000) != 0;
-}
-
-#endif

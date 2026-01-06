@@ -1,29 +1,15 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "build main.cpp",
-      "type": "shell",
-      "command": "D:/msys64/mingw64/bin/g++.exe",
-      "args": [
-        "-fdiagnostics-color=always",
-        "-g",
-        "${workspaceFolder}/main.cpp",
-        "${workspaceFolder}/Engine/Math/*.cpp",
-        "${workspaceFolder}/Engine/Core/Component/*.cpp",
-        "-o",
-        "${workspaceFolder}/main.exe",
-        "-I", "D:/msys64/mingw64/include",
-        "-L", "D:/msys64/mingw64/lib",
-        "-lncursesw",
-        "-ltermkey",
-        "-D_HAS_STD_BYTE=0"
-      ],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      "problemMatcher": ["$gcc"]
-    }
-  ]
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "MakeBuild",
+            "type": "shell",
+            "command": "make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
 }

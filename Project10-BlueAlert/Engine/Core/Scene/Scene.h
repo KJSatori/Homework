@@ -1,13 +1,14 @@
 #ifndef SCENE_H
 #define SCENE_H
 
-#include "../GameObject/GameObject.h"
 #include "../Component/Collider.h"
 #include "../../Render/Renderer.h"
-#include "../Component/Scripts/Script.h"
+#include "../Component/Script.h"
+#include "../Prefab/PrefabManager.h"
 #include <vector>
 #include <algorithm>
 #include <memory>
+#include <SDL2/SDL.h>
 
 using namespace std;
 
@@ -21,129 +22,48 @@ struct CollisionPair
     }
 };
 
+struct GameObject;
+
 struct Scene
 {
+    bool isStarted = false;
+
     // 场景的所有物体
     vector<shared_ptr<GameObject>> objects;
+    vector<shared_ptr<GameObject>> toAdd;
 
     // 碰撞状态表
     vector<CollisionPair> activeCollisions;
 
-    void AddObject(const shared_ptr<GameObject>& object)
-    {
-        objects.push_back(object);
-        object->Awake();
-    }
+    void AddObject(const shared_ptr<GameObject>& object);
 
-    void Start()
-    {
-        for (auto& obj : objects) 
-        {
-            obj->Start();
-        }
-    }
+    void Start();
 
-    void Update(float deltaTime)
-    {        
-        for (auto& obj : objects) 
-        {
-            obj->Update(deltaTime);
-        }
-        vector<CollisionPair> nextActiceCollisions;
+    void Update(float deltaTime);
 
-        for (size_t i = 0; i < objects.size(); ++i)
-        {
-            auto colA = objects[i]->GetComponent<Collider>();
-            if (!colA) continue;
+    /// @brief 分发窗口事件
+    void ProcessEvent(const SDL_Event& e);
 
-            for (size_t j = i + 1; j < objects.size(); ++j)
-            {
-                auto colB = objects[j]->GetComponent<Collider>();
-                if (!colB) continue;
+    void Render(Renderer& renderer);
 
-                if (colA->Intersects(*colB))
-                {
-                    CollisionPair newColPair;
-                    newColPair.a = colA->gameObject;
-                    newColPair.b = colB->gameObject;
-                    auto iter = find(activeCollisions.begin(), activeCollisions.end(), newColPair);
-                    if (iter == activeCollisions.end())
-                    {
-                        // 调用 A 与 B 的 OnCollisionEnter;
-                        auto scriptA = newColPair.a->GetComponent<Script>();
-                        if (scriptA) scriptA->OnColliderEnter(newColPair.b);
-                        auto scriptB = newColPair.b->GetComponent<Script>();
-                        if (scriptB) scriptB->OnColliderEnter(newColPair.a);
+    void Destroy();
 
-                        nextActiceCollisions.push_back(newColPair);
-                    }
-                    else
-                    {
-                        // 调用 A 与 B 的 OnCollisionStay;
-                        auto scriptA = newColPair.a->GetComponent<Script>();
-                        if (scriptA) scriptA->OnColliderStay(newColPair.b);
-                        auto scriptB = newColPair.b->GetComponent<Script>();
-                        if (scriptB) scriptB->OnColliderStay(newColPair.a);
+    void DestroyObject(const shared_ptr<GameObject>& obj);
 
-                        nextActiceCollisions.push_back(newColPair);
-                    }
-                }
-            }
-        }
+    void CleanUp();
 
-        for (auto pair : activeCollisions)
-        {
-            auto iter = find(nextActiceCollisions.begin(), nextActiceCollisions.end(), pair);
-            if (iter == nextActiceCollisions.end())
-            {
-                auto newColPair = *iter;
-                // 调用 *iter 里的 A 与 B 的 OnCollisionExit;
-                auto scriptA = newColPair.a->GetComponent<Script>();
-                if (scriptA) scriptA->OnColliderExit(newColPair.b);
-                auto scriptB = newColPair.b->GetComponent<Script>();
-                if (scriptB) scriptB->OnColliderExit(newColPair.a);
-            }
-        }
+    shared_ptr<GameObject> FindFirstByNameInRoot(const string& name);
 
-        // 帧末尾统一处理删除的Obj
-        CleanUp();
-    }
+    shared_ptr<GameObject> InstantiatePrefab(const string& key, const Vector2& pos);
+    shared_ptr<GameObject> InstantiatePrefab(const string& key, const Vector2& pos,
+        const std::function<void(shared_ptr<GameObject>)>& init);
 
-    void Render(Renderer& renderer) 
-    { 
-        renderer.Erase();
-        for (auto& obj : objects) 
-        {
-            obj->Render(renderer); 
-        } 
-        renderer.Refresh(); 
-    }
+    /// @brief 递归地将 obj 所有子物体（包括obj）推入 out 容器里
+    /// @param obj 物体
+    /// @param out 这里传非常量引用 会将物体直接推入 out
+    void CollectObjectChildren(const shared_ptr<GameObject>& obj, vector<shared_ptr<GameObject>>& out);
 
-    void Destroy()
-    {
-        for (auto& obj : objects) { obj->Destroy(); }
-        CleanUp();
-    }
-
-    void DestroyObject(const shared_ptr<GameObject>& obj)
-    {
-        obj->Destroy();
-    }
-
-    void CleanUp()
-    {
-        objects.erase(
-            remove_if(
-                objects.begin(), 
-                objects.end(), 
-                [](const shared_ptr<GameObject>& obj) 
-                { 
-                    return obj->isDestroyed; 
-                }
-            ), 
-            objects.end()
-        );
-    }
+    void EndGame();
 };
 
 
